@@ -1,5 +1,5 @@
 Package: BiocChallenges
-Title: Challenges for the Bioconductor community.
+Title: Challenges for the Bioconductor community
 Version: 0.0.1
 Authors@R: 
     person(given = "Kevin",

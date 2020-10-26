@@ -36,12 +36,10 @@ jobs:
         shell: Rscript {0}
 
       - name: Install pkgdown
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
            Rscript -e 'BiocManager::install("pkgdown"); pkgdown::build_site(".")'
 
       - name: Build pkgdown
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
            PATH=$PATH:$HOME/bin/ Rscript -e 'BiocManager::install("pkgdown"); pkgdown::build_site(".")'
 
