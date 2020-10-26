@@ -37,11 +37,13 @@ jobs:
 
       - name: Install pkgdown
         run: |
-           Rscript -e 'BiocManager::install("pkgdown"); pkgdown::build_site(".")'
+           BiocManager::install("pkgdown")
+        shell: Rscript {0}
 
       - name: Build pkgdown
         run: |
-           PATH=$PATH:$HOME/bin/ Rscript -e 'BiocManager::install("pkgdown"); pkgdown::build_site(".")'
+           pkgdown::build_site(".")
+        shell: Rscript {0}
 
       # deploy needs rsync? Seems so.
       - name: Install deploy dependencies
