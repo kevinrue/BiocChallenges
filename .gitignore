@@ -1,2 +1,6 @@
 .Rproj.user
 BiocChallenges.Rproj
+# renv
+.Rprofile
+renv
+renv.lock
