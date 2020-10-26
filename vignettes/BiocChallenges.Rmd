@@ -1,0 +1,20 @@
+---
+title: "BiocChallenges"
+author:
+- name: Kevin Rue-Albrecht
+  affiliation: University of Oxford
+  email: kevinrue67@gmail.com
+package: BiocChallenges
+output:
+  BiocStyle::html_document
+abstract: |
+  Challenges for the Biocoductor community.
+vignette: |
+  %\VignetteIndexEntry{Getting Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Welcome
+
+The goal of BiocChallenges is to host challenges contributed by and for the Bioconductor community.

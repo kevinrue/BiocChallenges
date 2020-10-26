@@ -4,3 +4,4 @@ BiocChallenges.Rproj
 .Rprofile
 renv
 renv.lock
+docs
