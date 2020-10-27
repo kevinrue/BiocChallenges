@@ -7,7 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "kevinrue67@gmail.com",
            comment = c(ORCID = "0000-0003-3899-3872"))
-Description: What the package does (one paragraph).
+Description: This package hosts challenges contributed by and for the Bioconductor community.
+    It provides functionality to manage, filter, and display challenges as articles of a pkgdown website.
+    Challenges are bite-sized projects led by volunteers, encouraging collaboration and sharing of expertise between contributors.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
