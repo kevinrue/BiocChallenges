@@ -18,3 +18,17 @@ vignette: |
 # Welcome
 
 The goal of <i class="fab fa-github"></i> `r BiocStyle::Githubpkg("kevinrue/BiocChallenges")` is to host challenges contributed by and for the Bioconductor community.
+
+```{r, include=FALSE}
+library(BiocChallenges)
+```
+
+# Challenge difficulty
+
+Each challenge is accompanied by an estimated difficulty.
+The difficulty level can be one of:
+
+```{r, echo=FALSE, results='asis'}
+cat(sprintf("- `%s`", BiocChallenges::difficulty_levels), sep = "\n")
+```
+

@@ -6,7 +6,7 @@ library(gh)
 
 ## Difficulty
 
-`r stringr::str_to_title(params$difficulty)`.
+`r BiocChallenges::format_difficulty(params)`.
 
 ## Challenge leader(s)
 

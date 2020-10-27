@@ -25,4 +25,5 @@ Imports:
     htmltools,
     magrittr,
     dplyr,
+    stringr,
     gh
