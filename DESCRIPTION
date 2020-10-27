@@ -1,16 +1,19 @@
 Package: BiocChallenges
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Challenges for the Bioconductor community
+Version: 0.0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Kevin",
+           family = "Rue-Albrecht",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "kevinrue67@gmail.com",
+           comment = c(ORCID = "0000-0003-3899-3872"))
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+VignetteBuilder: knitr
+Suggests:
+    knitr,
+    BiocStyle

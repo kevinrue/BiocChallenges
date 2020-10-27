@@ -2,3 +2,5 @@
 ^renv\.lock$
 ^BiocChallenges\.Rproj$
 ^\.Rproj\.user$
+^\.github$
+^LICENSE\.md$
