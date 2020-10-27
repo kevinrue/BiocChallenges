@@ -16,7 +16,7 @@ difficulty_levels
 format_difficulty(params)
 }
 \arguments{
-\item{param}{Challenge parameters as \code{list}.}
+\item{params}{Challenge parameters as \code{list}.}
 }
 \value{
 \code{format_difficulty()} returns a character value indicating the challenge difficulty.

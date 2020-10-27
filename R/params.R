@@ -9,7 +9,7 @@ difficulty_levels <- c("Novice", "Intermediate", "Advanced")
 
 #' Challenge Difficulty
 #'
-#' @param param Challenge parameters as `list`.
+#' @param params Challenge parameters as `list`.
 #'
 #' @return
 #' `format_difficulty()` returns a character value indicating the challenge difficulty.
