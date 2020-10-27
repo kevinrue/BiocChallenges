@@ -1,6 +1,6 @@
 on: [push]
 
-name: build_check_deploy
+name: R-CMD-check
 
 jobs:
   build_check_deploy:

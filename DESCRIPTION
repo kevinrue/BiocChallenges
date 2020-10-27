@@ -14,6 +14,13 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
-Suggests:
+URL: https://kevinrue.github.io/BiocChallenges2/, https://github.com/kevinrue/BiocChallenges2
+BugReports: https://github.com/kevinrue/BiocChallenges2/issues
+Imports:
     knitr,
-    BiocStyle
+    rmarkdown,
+    BiocStyle,
+    htmltools,
+    magrittr,
+    dplyr,
+    gh

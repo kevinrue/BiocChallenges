@@ -1,0 +1,7 @@
+articles:
+- title: Getting Started
+  contents: BiocChallenges
+- title: Active challenges
+  navbar: ~
+  contents:
+  - single_cell_gallery
