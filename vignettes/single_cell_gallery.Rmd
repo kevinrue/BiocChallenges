@@ -1,0 +1,39 @@
+---
+title: "Contribute to the `SingleCellExperiment` Gallery."
+author:
+- name: Kevin Rue-Albrecht
+  affiliation: University of Oxford
+  email: kevinrue67@gmail.com
+abstract: |
+  Contribute to the `SingleCellExperiment` Gallery.
+vignette: |
+  %\VignetteIndexEntry{Getting Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+params:
+  topic: "Contribute to the `SingleCellExperiment` Gallery."
+  difficulty: "intermediate"
+  leaders:
+    value:
+      LTLA: "Aaron Lun"
+      kevinrue: "Kevin Rue"
+  tags:
+    - "Single cell"
+    - "Visualization"
+  duration: "1 hour(s)"
+  repositories:
+    - "LTLA/SCEGallery"
+---
+
+```{r, child="_challenge_base.Rmd"}
+```
+
+## Guidelines
+
+Fork the original repository <i class="fab fa-github"></i> [LTLA/SCEGallery](https://github.com/LTLA/SCEGallery), working on a branch of your fork, and submitting a pull request when your contribution is ready for review.
+
+You may contribute new R markdown files or edit existing ones.
+
+When contributing a new chapter, we recommend reading an [existing chapter](https://github.com/LTLA/SCEGallery/blob/master/reduced-dimensions.Rmd), and using it as a template for your own contribution.
+
+Contributions written in a style that matches current contents are more likely to be accepted, and more rapidly.

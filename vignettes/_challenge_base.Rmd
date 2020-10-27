@@ -1,0 +1,50 @@
+```{r, include=FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+library(magrittr)
+library(gh)
+```
+
+## Difficulty
+
+`r stringr::str_to_title(params$difficulty)`.
+
+## Challenge leader(s)
+
+```{r, echo=FALSE, results='asis'}
+for (github in names(params$leaders)) {
+    profile <- sprintf("http://github.com/%s", github)
+    cat(sprintf('- %s - <i class="fab fa-github"></i> [%s](%s)\n', params$leaders[[github]], github, profile))
+}
+```
+
+## Tags
+
+```{r, echo=FALSE, results='asis'}
+cat(sprintf("- `%s`\n", sort(params$tags)))
+```
+
+## Duration
+
+A minimum of `r params$duration` is recommended for this challenge.
+
+## Repositories
+
+A list of GitHub repositories that participate in this challenge.
+
+```{r, echo=FALSE, results='asis'}
+gh_stargazer_count <- function(repo) {
+    query <- gh::gh(sprintf("GET /repos/%s", repo))
+    query$stargazers_count
+}
+if (length(params$repositories)) {
+    tab <- data.frame(
+        repository = sprintf('<i class="fab fa-github"></i> [%s](%s)', params$repositories, sprintf("https://github.com/%s", params$repositories)),
+        stargazers = vapply(params$repositories, gh_stargazer_count, numeric(1))
+    ) %>% 
+        dplyr::arrange(desc(stargazers))
+    knitr::kable(tab)
+} else {
+    cat("_No repository currently addresses this challenge._\n")
+    cat("\n")
+}
+```
