@@ -17,4 +17,4 @@ vignette: |
 
 # Welcome
 
-The goal of BiocChallenges is to host challenges contributed by and for the Bioconductor community.
+The goal of <i class="fab fa-github"></i> `r BiocStyle::Githubpkg("kevinrue/BiocChallenges")` is to host challenges contributed by and for the Bioconductor community.

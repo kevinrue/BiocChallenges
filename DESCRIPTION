@@ -17,10 +17,10 @@ VignetteBuilder: knitr
 URL: https://kevinrue.github.io/BiocChallenges2/, https://github.com/kevinrue/BiocChallenges2
 BugReports: https://github.com/kevinrue/BiocChallenges2/issues
 Imports:
+    knitr,
+    rmarkdown,
+    BiocStyle,
+    htmltools,
     magrittr,
     dplyr,
     gh
-Suggests:
-    knitr,
-    BiocStyle,
-    htmltools
