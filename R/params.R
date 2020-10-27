@@ -31,7 +31,7 @@ format_difficulty <- function(params) {
     }
     difficulty <- str_to_title(difficulty)
     if (!difficulty %in% difficulty_levels) {
-        stop("Challenge difficult should be one of ", deparse(difficulty_levels))
+        stop("Challenge difficulty should be one of ", deparse(difficulty_levels))
     }
     difficulty
 }

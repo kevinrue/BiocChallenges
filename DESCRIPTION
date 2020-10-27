@@ -27,3 +27,6 @@ Imports:
     dplyr,
     stringr,
     gh
+Suggests: 
+    covr,
+    testthat
