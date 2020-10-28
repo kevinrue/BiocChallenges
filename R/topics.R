@@ -1,7 +1,6 @@
 # Available topics
 
-#' Topics
-#'
+#' @rdname format_topics
 #' @export
 #' @format
 #' `topic_tags` is a character vector of valid topic tags.
