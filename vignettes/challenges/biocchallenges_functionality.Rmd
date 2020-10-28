@@ -23,7 +23,7 @@ params:
     - "kevinrue/BiocChallenges2"
 ---
 
-```{r, child="childs/_challenge_base.Rmd"}
+```{r, child="_challenge_base.Rmd"}
 ```
 
 ## Guidelines

@@ -12,13 +12,14 @@
 #' params <- list(leaders = list(kevinrue = "Kevin Rue-Albrecht"))
 #' cat(format_leaders(params), sep = "\n")
 format_leaders <- function(params) {
-    leaders_list <- params$leaders
-    if (is.null(leaders_list)) {
+    challenge_leaders <- params$leaders
+    if (is.null(challenge_leaders)) {
         stop("Challenge leaders are missing")
     }
-    leaders_list <- unlist(leaders_list)
-    leaders_list <- mapply(.format_github_user, github = names(leaders_list), name = leaders_list)
-    leaders_list
+    challenge_leaders <- unlist(challenge_leaders)
+    challenge_leaders <- mapply(.format_github_user, github = names(challenge_leaders), name = challenge_leaders)
+    challenge_leaders <- paste0(challenge_leaders, collapse = "\n")
+    challenge_leaders
 }
 
 .format_github_user <- function(github, name) {
