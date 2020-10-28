@@ -13,6 +13,9 @@
 #' cat(format_leaders(params), sep = "\n")
 format_leaders <- function(params) {
     leaders_list <- params$leaders
+    if (is.null(leaders_list)) {
+        stop("Challenge leaders are missing")
+    }
     leaders_list <- unlist(leaders_list)
     leaders_list <- mapply(.format_github_user, github = names(leaders_list), name = leaders_list)
     leaders_list

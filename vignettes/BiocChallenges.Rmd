@@ -32,3 +32,13 @@ The difficulty level can be one of:
 cat(sprintf("- `%s`", BiocChallenges::difficulty_levels), sep = "\n")
 ```
 
+# Topics
+
+Each challenge is tagged by a list of topic labels to facilitate categorization and discoverability.
+Topic tags can be any from the following list:
+
+```{r, echo=FALSE, results='asis'}
+cat(sprintf("- `%s`", BiocChallenges::topic_tags), sep = "\n")
+```
+
+New topics can be submitted as [pull requests](https://github.com/kevinrue/BiocChallenges2/pulls) editing the [topics.R](https://github.com/kevinrue/BiocChallenges2/blob/main/R/topics.R) script.
