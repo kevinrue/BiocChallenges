@@ -17,7 +17,7 @@ params:
       LTLA: "Aaron Lun"
       kevinrue: "Kevin Rue"
   topics:
-    - "Single cell"
+    - "Single-cell"
     - "Visualization"
   duration: "1 hour(s)"
   repositories:

@@ -3,4 +3,6 @@
 export(difficulty_levels)
 export(format_difficulty)
 export(format_leaders)
+export(format_topics)
+export(topic_tags)
 importFrom(stringr,str_to_title)

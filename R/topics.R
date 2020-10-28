@@ -1,0 +1,42 @@
+# Available topics
+
+#' Topics
+#'
+#' @export
+#' @format
+#' `topic_tags` is a character vector of valid topic tags.
+"topic_tags"
+
+topic_tags <- sort(c(
+    "Challenges",
+    "Community",
+    "Single-cell",
+    "Visualization"))
+
+#' Challenge Topics
+#'
+#' @param params Challenge parameters as `list`.
+#'
+#' @return
+#' `format_topics()` returns a character value indicating the challenge topic tags.
+#' @export
+#'
+#' @examples
+#' topic_tags
+#'
+#' params <- list(topics = c("Challenges", "Community"))
+#' cat(format_topics(params))
+format_topics <- function(params) {
+    challenge_topics <- params$topics
+    if (is.null(challenge_topics)) {
+        stop("Challenge topics are missing")
+    }
+    if (!all(challenge_topics %in% topic_tags)) {
+        invalid <- setdiff(challenge_topics, topic_tags)
+        invalid <- paste0(invalid, collapse = ", ")
+        invalid <- strwrap(invalid, width = 60, prefix = "  ", initial = "  ")
+        msg <- sprintf("invalid topics:\n%s", invalid)
+        stop(msg)
+    }
+    sprintf("- `%s`\n", challenge_topics)
+}

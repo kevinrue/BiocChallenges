@@ -11,3 +11,12 @@ test_that("format_difficulty works", {
     expect_match(out, "https://github.com/kevinrue")
 
 })
+
+test_that("format_leaders detects missing parameter", {
+
+    expect_error(
+        format_leaders(params = list()),
+        "Challenge leaders are missing"
+    )
+
+})
