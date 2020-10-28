@@ -10,12 +10,7 @@ library(gh)
 
 ## Challenge leader(s)
 
-```{r, echo=FALSE, results='asis'}
-for (github in names(params$leaders)) {
-    profile <- sprintf("http://github.com/%s", github)
-    cat(sprintf('- %s - <i class="fab fa-github"></i> [%s](%s)\n', params$leaders[[github]], github, profile))
-}
-```
+`r cat(format_leaders(params), sep = "\n")`
 
 ## Tags
 
