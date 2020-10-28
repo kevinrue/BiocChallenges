@@ -1,3 +1,4 @@
+# Functions to process and display difficulty levels.
 
 #' @rdname format_difficulty
 #' @export
@@ -7,7 +8,7 @@
 
 difficulty_levels <- c("Novice", "Intermediate", "Advanced")
 
-#' Challenge Difficulty
+#' Challenge Difficulty Levels
 #'
 #' @param params Challenge parameters as `list`.
 #'
