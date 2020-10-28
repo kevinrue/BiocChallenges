@@ -9,13 +9,10 @@
 #' @export
 #'
 #' @examples
-#' leaders <- list(
-#'     kevinrue = "Kevin Rue-Albrecht"
-#' )
-#' params <- list(leaders = list(value = leaders))
+#' params <- list(leaders = list(kevinrue = "Kevin Rue-Albrecht"))
 #' cat(format_leaders(params), sep = "\n")
 format_leaders <- function(params) {
-    leaders_list <- params$leaders$value
+    leaders_list <- params$leaders
     leaders_list <- unlist(leaders_list)
     leaders_list <- mapply(.format_github_user, github = names(leaders_list), name = leaders_list)
     leaders_list

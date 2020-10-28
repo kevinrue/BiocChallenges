@@ -12,12 +12,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ## Challenge leader(s)
 
-`r cat(BiocChallenges::format_leaders(params), sep = "\n")`
+`r paste0(BiocChallenges::format_leaders(params), collapse = "\n")`
 
-## Tags
+## Topics
 
 ```{r, echo=FALSE, results='asis'}
-cat(sprintf("- `%s`\n", sort(params$tags)))
+cat(sprintf("- `%s`\n", sort(params$topics)))
 ```
 
 ## Duration
@@ -35,11 +35,11 @@ gh_stargazer_count <- function(repo) {
 }
 if (length(params$repositories)) {
     tab <- data.frame(
-        repository = sprintf('<i class="fab fa-github"></i> [%s](%s)', params$repositories, sprintf("https://github.com/%s", params$repositories)),
+        repository = sprintf('<i class="fab fa-github"></i> [%s](https://github.com/%s)', params$repositories, params$repositories),
         stargazers = vapply(params$repositories, gh_stargazer_count, numeric(1))
     ) %>% 
         dplyr::arrange(desc(stargazers))
-    knitr::kable(tab)
+    knitr::kable(tab, row.names = FALSE)
 } else {
     cat("_No repository currently addresses this challenge._\n")
     cat("\n")

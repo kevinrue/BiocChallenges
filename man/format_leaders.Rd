@@ -16,9 +16,6 @@ format_leaders(params)
 Challenge Leaders
 }
 \examples{
-leaders <- list(
-    kevinrue = "Kevin Rue-Albrecht"
-)
-params <- list(leaders = list(value = leaders))
+params <- list(leaders = list(kevinrue = "Kevin Rue-Albrecht"))
 cat(format_leaders(params), sep = "\n")
 }
