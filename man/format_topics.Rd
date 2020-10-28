@@ -16,7 +16,7 @@ format_topics(params)
 Challenge Topics
 }
 \examples{
-topics
+topic_tags
 
 params <- list(topics = c("Challenges", "Community"))
 cat(format_topics(params))

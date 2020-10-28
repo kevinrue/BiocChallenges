@@ -22,7 +22,7 @@ topic_tags <- sort(c(
 #' @export
 #'
 #' @examples
-#' topics
+#' topic_tags
 #'
 #' params <- list(topics = c("Challenges", "Community"))
 #' cat(format_topics(params))
