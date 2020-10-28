@@ -4,4 +4,5 @@ articles:
 - title: Active challenges
   navbar: ~
   contents:
+  - biocchallenges_functionality
   - single_cell_gallery

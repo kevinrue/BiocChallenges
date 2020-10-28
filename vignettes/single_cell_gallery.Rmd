@@ -1,23 +1,22 @@
 ---
-title: "Contribute to the SingleCellExperiment Gallery."
+title: "Contribute to the SingleCellExperiment Gallery"
 author:
 - name: Kevin Rue-Albrecht
   affiliation: University of Oxford
   email: kevinrue67@gmail.com
 abstract: |
-  Contribute to the `SingleCellExperiment` Gallery.
+  Contribute to the `r BiocStyle::Biocpkg("SingleCellExperiment")` Gallery.
 vignette: |
-  %\VignetteIndexEntry{Contribute to the SingleCellExperiment Gallery.}
+  %\VignetteIndexEntry{Contribute to the SingleCellExperiment Gallery}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 params:
-  topic: "Contribute to the `SingleCellExperiment` Gallery."
   difficulty: "intermediate"
   leaders:
     value:
       LTLA: "Aaron Lun"
       kevinrue: "Kevin Rue"
-  tags:
+  topics:
     - "Single cell"
     - "Visualization"
   duration: "1 hour(s)"
