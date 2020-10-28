@@ -1,7 +1,9 @@
 ```{r, include=FALSE}
-htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+library(rmarkdown)
+library(BiocChallenges)
 library(magrittr)
 library(gh)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 ## Difficulty
@@ -10,12 +12,7 @@ library(gh)
 
 ## Challenge leader(s)
 
-```{r, echo=FALSE, results='asis'}
-for (github in names(params$leaders)) {
-    profile <- sprintf("http://github.com/%s", github)
-    cat(sprintf('- %s - <i class="fab fa-github"></i> [%s](%s)\n', params$leaders[[github]], github, profile))
-}
-```
+`r cat(BiocChallenges::format_leaders(params), sep = "\n")`
 
 ## Tags
 

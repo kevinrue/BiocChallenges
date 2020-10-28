@@ -7,8 +7,6 @@
 \title{Challenge Difficulty Levels}
 \format{
 \code{difficulty_levels} is a character vector of valid difficulty levels.
-
-
 }
 \usage{
 difficulty_levels
@@ -28,6 +26,6 @@ Challenge Difficulty Levels
 difficulty_levels
 
 params <- list(difficulty = "novice")
-format_difficulty(params)
+cat(format_difficulty(params))
 }
 \keyword{datasets}

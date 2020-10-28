@@ -16,15 +16,13 @@ difficulty_levels <- c("Novice", "Intermediate", "Advanced")
 #' `format_difficulty()` returns a character value indicating the challenge difficulty.
 #' @export
 #'
-#' @format
-#'
 #' @importFrom stringr str_to_title
 #'
 #' @examples
 #' difficulty_levels
 #'
 #' params <- list(difficulty = "novice")
-#' format_difficulty(params)
+#' cat(format_difficulty(params))
 format_difficulty <- function(params) {
     difficulty <- params$difficulty
     if (is.null(difficulty)) {
