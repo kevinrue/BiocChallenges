@@ -22,5 +22,5 @@ format_leaders <- function(params) {
 }
 
 .format_github_user <- function(github, name) {
-        sprintf('- %s - <i class="fab fa-github"></i> [%s](http://github.com/%s)', name, github, github)
+        sprintf('- %s - <i class="fab fa-github"></i> [%s](https://github.com/%s)', name, github, github)
     }
