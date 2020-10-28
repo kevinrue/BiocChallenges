@@ -16,9 +16,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ## Topics
 
-```{r, echo=FALSE, results='asis'}
-cat(sprintf("- `%s`\n", sort(params$topics)))
-```
+`r paste0(BiocChallenges::format_topics(params), collapse = "\n")`
 
 ## Duration
 

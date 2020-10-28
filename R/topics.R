@@ -37,5 +37,7 @@ format_topics <- function(params) {
         msg <- sprintf("invalid topics:\n%s", invalid)
         stop(msg)
     }
-    sprintf("- `%s`\n", challenge_topics)
+    challenge_topics <- sprintf("- `%s`\n", challenge_topics)
+    challenge_topics <- paste0(challenge_topics, collapse = "\n")
+    challenge_topics
 }
