@@ -100,7 +100,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/single_cell_gallery.html">Contribute to the SingleCellExperiment Gallery.</a>
+      <a href="../articles/biocchallenges_functionality.html">Contribute new functionality to BiocChallenges</a>
+    </li>
+    <li>
+      <a href="../articles/single_cell_gallery.html">Contribute to the SingleCellExperiment Gallery</a>
     </li>
     <li class="divider"></li>
     <li>
@@ -154,10 +157,7 @@
     <p><code>format_leaders()</code> returns a character value indicating the challenge leaders.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>leaders</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    kevinrue <span class='op'>=</span> <span class='st'>"Kevin Rue-Albrecht"</span>
-<span class='op'>)</span>
-<span class='va'>params</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>leaders <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>value <span class='op'>=</span> <span class='va'>leaders</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='va'>params</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>leaders <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>kevinrue <span class='op'>=</span> <span class='st'>"Kevin Rue-Albrecht"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='fu'>format_leaders</span><span class='op'>(</span><span class='va'>params</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>"\n"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; - Kevin Rue-Albrecht - &lt;i class="fab fa-github"&gt;&lt;/i&gt; [kevinrue](https://github.com/kevinrue)</div></pre>
   </div>

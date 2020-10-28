@@ -3,6 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   BiocChallenges: BiocChallenges.html
+  biocchallenges_functionality: biocchallenges_functionality.html
   single_cell_gallery: single_cell_gallery.html
-last_built: 2020-10-28T09:21Z
+last_built: 2020-10-28T16:50Z
 
