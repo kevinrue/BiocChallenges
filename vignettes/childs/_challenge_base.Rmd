@@ -1,7 +1,9 @@
 ```{r, include=FALSE}
-htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+library(rmarkdown)
+library(BiocChallenges)
 library(magrittr)
 library(gh)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 ## Difficulty
@@ -10,7 +12,7 @@ library(gh)
 
 ## Challenge leader(s)
 
-`r cat(format_leaders(params), sep = "\n")`
+`r cat(BiocChallenges::format_leaders(params), sep = "\n")`
 
 ## Tags
 
