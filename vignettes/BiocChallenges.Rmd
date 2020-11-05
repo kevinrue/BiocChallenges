@@ -17,7 +17,7 @@ vignette: |
 
 # Welcome
 
-The goal of <i class="fab fa-github"></i> `r BiocStyle::Githubpkg("kevinrue/BiocChallenges2", "BiocChallenges")` is to host challenges contributed by and for the Bioconductor community.
+The goal of <i class="fab fa-github"></i> `r BiocStyle::Githubpkg("kevinrue/BiocChallenges")` is to host challenges contributed by and for the Bioconductor community.
 
 ```{r, include=FALSE}
 library(BiocChallenges)
@@ -41,4 +41,4 @@ Topic tags can be any combination of:
 cat(sprintf("- `%s`", BiocChallenges::topic_tags), sep = "\n")
 ```
 
-New topics can be submitted as [pull requests](https://github.com/kevinrue/BiocChallenges2/pulls) editing the [topics.R](https://github.com/kevinrue/BiocChallenges2/blob/main/R/topics.R) script.
+New topics can be submitted as [pull requests](https://github.com/kevinrue/BiocChallenges/pulls) editing the [topics.R](https://github.com/kevinrue/BiocChallenges/blob/main/R/topics.R) script.
