@@ -35,7 +35,7 @@ cat(sprintf("- `%s`", BiocChallenges::difficulty_levels), sep = "\n")
 # Topics
 
 Each challenge is tagged by a list of topic labels to facilitate categorization and discoverability.
-Topic tags can be any from the following list:
+Topic tags can be any combination of:
 
 ```{r, echo=FALSE, results='asis'}
 cat(sprintf("- `%s`", BiocChallenges::topic_tags), sep = "\n")
