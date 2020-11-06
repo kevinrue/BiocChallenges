@@ -27,14 +27,10 @@ A minimum of `r params$duration` is recommended for this challenge.
 A list of GitHub repositories that participate in this challenge.
 
 ```{r, echo=FALSE, results='asis'}
-gh_stargazer_count <- function(repo) {
-    query <- gh::gh(sprintf("GET /repos/%s", repo))
-    query$stargazers_count
-}
 if (length(params$repositories)) {
     tab <- data.frame(
         repository = sprintf('<i class="fab fa-github"></i> [%s](https://github.com/%s)', params$repositories, params$repositories),
-        stargazers = vapply(params$repositories, gh_stargazer_count, numeric(1))
+        stargazers = vapply(params$repositories, BiocChallenges::gh_stargazer_count, integer(1))
     ) %>% 
         dplyr::arrange(desc(stargazers))
     knitr::kable(tab, row.names = FALSE)
