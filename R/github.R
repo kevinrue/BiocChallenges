@@ -14,6 +14,14 @@
 #'     gh_stargazer_count("kevinrue/BiocChallenges")
 #' }
 gh_stargazer_count <- function(repo) { # nocov start
-    query <- gh::gh("/repos/:repo", repo = repo)
-    as.integer(query$stargazers_count)
+    value <- tryCatch({
+        query <- gh::gh("/repos/:repo", repo = repo)
+        as.integer(query$stargazers_count)
+        },
+        error = function(e) {
+            warning(e$message)
+            return(NA_integer_)
+        }
+    )
+    value
 } # nocov end
