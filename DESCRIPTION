@@ -19,14 +19,17 @@ VignetteBuilder: knitr
 URL: https://kevinrue.github.io/BiocChallenges/, https://github.com/kevinrue/BiocChallenges
 BugReports: https://github.com/kevinrue/BiocChallenges/issues
 Imports:
-    stringr
+    stringr,
+    gh
 Suggests:
     knitr,
     rmarkdown,
     magrittr,
     BiocStyle,
     dplyr,
-    gh,
     htmltools,
     covr,
     testthat
+biocViews:
+    Software,
+    Infrastructure

@@ -27,16 +27,8 @@ A minimum of `r params$duration` is recommended for this challenge.
 A list of GitHub repositories that participate in this challenge.
 
 ```{r, echo=FALSE, results='asis'}
-gh_stargazer_count <- function(repo) {
-    query <- gh::gh(sprintf("GET /repos/%s", repo))
-    query$stargazers_count
-}
 if (length(params$repositories)) {
-    tab <- data.frame(
-        repository = sprintf('<i class="fab fa-github"></i> [%s](https://github.com/%s)', params$repositories, params$repositories),
-        stargazers = vapply(params$repositories, gh_stargazer_count, numeric(1))
-    ) %>% 
-        dplyr::arrange(desc(stargazers))
+    tab <- gh_repositories_info_table(params$repositories)
     knitr::kable(tab, row.names = FALSE)
 } else {
     cat("_No repository currently addresses this challenge._\n")
