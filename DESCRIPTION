@@ -20,13 +20,13 @@ URL: https://kevinrue.github.io/BiocChallenges/, https://github.com/kevinrue/Bio
 BugReports: https://github.com/kevinrue/BiocChallenges/issues
 Imports:
     stringr,
-    gh
+    gh,
+    dplyr
 Suggests:
     knitr,
     rmarkdown,
     magrittr,
     BiocStyle,
-    dplyr,
     htmltools,
     covr,
     testthat

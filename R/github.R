@@ -37,6 +37,8 @@ gh_stargazer_count <- function(repo) { # nocov start
 #' }
 #' @export
 #'
+#' @importFrom dplyr arrange desc
+#'
 #' @examples
 #' if (interactive()) {
 #'     gh_repositories_info_table("kevinrue/BiocChallenges")
