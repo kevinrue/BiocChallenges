@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • BiocChallenges</title>
+<title>Tabulate Information for GitHub Repositories — gh_repositories_info_table • BiocChallenges</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Tabulate Information for GitHub Repositories — gh_repositories_info_table" />
+<meta property="og:description" content="Tabulate Information for GitHub Repositories" />
 
 
 
@@ -60,7 +61,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -132,66 +133,43 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Tabulate Information for GitHub Repositories</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kevinrue/BiocChallenges/blob/master/R/github.R'><code>R/github.R</code></a></small>
+    <div class="hidden name"><code>gh_repositories_info_table.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Tabulate Information for GitHub Repositories</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>gh_repositories_info_table</span><span class='op'>(</span><span class='va'>repos</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="format_difficulty.html">difficulty_levels</a></code> <code><a href="format_difficulty.html">format_difficulty()</a></code> </p>
-        </td>
-        <td><p>Challenge Difficulty Levels</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="format_leaders.html">format_leaders()</a></code> </p>
-        </td>
-        <td><p>Challenge Leaders</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="format_topics.html">topic_tags</a></code> <code><a href="format_topics.html">format_topics()</a></code> </p>
-        </td>
-        <td><p>Challenge Topics</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="gh_repositories_info_table.html">gh_repositories_info_table()</a></code> </p>
-        </td>
-        <td><p>Tabulate Information for GitHub Repositories</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="gh_stargazer_count.html">gh_stargazer_count()</a></code> </p>
-        </td>
-        <td><p>Query Information from GitHub API</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>repos</th>
+      <td><p>Character vector of GitHub repositories, each formatted as <code>owner/repo</code>.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>data.frame</code> with the following columns:</p><dl>
+<dt><code>repository</code></dt><dd><p>HTML content representing a link to the GitHub repository.</p></dd>
+<dt><code>stargazers</code></dt><dd><p>Integer count of stargazers on the GitHub repository.</p></dd>
+
+</dl>
+
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='fu'>gh_repositories_info_table</span><span class='op'>(</span><span class='st'>"kevinrue/BiocChallenges"</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
