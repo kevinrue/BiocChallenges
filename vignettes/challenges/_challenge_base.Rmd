@@ -28,11 +28,7 @@ A list of GitHub repositories that participate in this challenge.
 
 ```{r, echo=FALSE, results='asis'}
 if (length(params$repositories)) {
-    tab <- data.frame(
-        repository = sprintf('<i class="fab fa-github"></i> [%s](https://github.com/%s)', params$repositories, params$repositories),
-        stargazers = vapply(params$repositories, BiocChallenges::gh_stargazer_count, integer(1))
-    ) %>% 
-        dplyr::arrange(desc(stargazers))
+    tab <- gh_repositories_info_table(params$repositories)
     knitr::kable(tab, row.names = FALSE)
 } else {
     cat("_No repository currently addresses this challenge._\n")

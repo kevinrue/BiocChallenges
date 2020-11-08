@@ -6,3 +6,13 @@ test_that("gh_stargazer_count returns NA for invalid repository", {
         NA_integer_
     )
 })
+
+test_that("gh_repositories_info_table can return an empty table", {
+    expect_identical(
+        gh_repositories_info_table(character(0)),
+        data.frame(
+            repository = character(0),
+            stargazers = integer(0)
+        )
+    )
+})

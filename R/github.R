@@ -25,3 +25,29 @@ gh_stargazer_count <- function(repo) { # nocov start
     )
     value
 } # nocov end
+
+#' Tabulate Information for GitHub Repositories
+#'
+#' @param repos Character vector of GitHub repositories, each formatted as `owner/repo`.
+#'
+#' @return A `data.frame` with the following columns:
+#' \describe{
+#' \item{`repository`}{HTML content representing a link to the GitHub repository.}
+#' \item{`stargazers`}{Integer count of stargazers on the GitHub repository.}
+#' }
+#' @export
+#'
+#' @examples
+#' if (interactive()) {
+#'     gh_repositories_info_table("kevinrue/BiocChallenges")
+#' }
+gh_repositories_info_table <- function(repos) {
+    column_link <- sprintf('<i class="fab fa-github"></i> [%s](https://github.com/%s)', repos, repos)
+    column_stargazers <- vapply(repos, BiocChallenges::gh_stargazer_count, integer(1))
+    tab <- data.frame(
+        repository = column_link,
+        stargazers = column_stargazers
+    )
+    tab <- dplyr::arrange(tab, desc(stargazers))
+    tab
+}
