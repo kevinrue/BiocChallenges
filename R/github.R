@@ -48,6 +48,6 @@ gh_repositories_info_table <- function(repos) {
         repository = column_link,
         stargazers = column_stargazers
     )
-    tab <- dplyr::arrange(tab, desc(stargazers))
+    tab <- tab[order(tab$stargazers, decreasing = TRUE), ]
     tab
 }

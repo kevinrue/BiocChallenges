@@ -14,6 +14,10 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 `r paste0(BiocChallenges::format_leaders(params), collapse = "\n")`
 
+## Date added
+
+`r BiocChallenges::format_date_created(params)`
+
 ## Topics
 
 `r paste0(BiocChallenges::format_topics(params), collapse = "\n")`

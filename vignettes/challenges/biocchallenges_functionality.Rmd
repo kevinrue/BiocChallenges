@@ -15,6 +15,7 @@ params:
   leaders:
     value:
       kevinrue: "Kevin Rue"
+  date: "2020-11-08"
   topics:
     - "Community"
     - "Challenges"

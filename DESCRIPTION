@@ -26,7 +26,6 @@ Suggests:
     rmarkdown,
     magrittr,
     BiocStyle,
-    dplyr,
     htmltools,
     covr,
     testthat

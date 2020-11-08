@@ -11,6 +11,7 @@ vignette: |
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 params:
+  date: "2020-11-08"
   difficulty: "intermediate"
   leaders:
     value:
