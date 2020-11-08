@@ -37,8 +37,6 @@ gh_stargazer_count <- function(repo) { # nocov start
 #' }
 #' @export
 #'
-#' @importFrom dplyr arrange desc
-#'
 #' @examples
 #' if (interactive()) {
 #'     gh_repositories_info_table("kevinrue/BiocChallenges")
@@ -50,6 +48,6 @@ gh_repositories_info_table <- function(repos) {
         repository = column_link,
         stargazers = column_stargazers
     )
-    tab <- dplyr::arrange(tab, desc(stargazers))
+    tab <- tab[order(tab$stargazers, decreasing = TRUE), ]
     tab
 }

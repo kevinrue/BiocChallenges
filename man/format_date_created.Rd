@@ -17,5 +17,5 @@ Dates
 }
 \examples{
 params <- list(date = "2020-11-08")
-format_date_added(params)
+format_date_created(params)
 }

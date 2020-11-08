@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' params <- list(date = "2020-11-08")
-#' format_date_added(params)
+#' format_date_created(params)
 format_date_created <- function(params) {
     sprintf("This challenge was created on %s", format(as.Date(params$date), "%B %d, %Y"))
 }

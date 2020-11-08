@@ -20,8 +20,7 @@ URL: https://kevinrue.github.io/BiocChallenges/, https://github.com/kevinrue/Bio
 BugReports: https://github.com/kevinrue/BiocChallenges/issues
 Imports:
     stringr,
-    gh,
-    dplyr
+    gh
 Suggests:
     knitr,
     rmarkdown,
