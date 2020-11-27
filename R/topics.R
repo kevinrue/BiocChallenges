@@ -10,7 +10,8 @@ topic_tags <- sort(c(
     "Challenges",
     "Community",
     "Single-cell",
-    "Visualization"))
+    "Visualization",
+    "Instrumentation"))
 
 #' Challenge Topics
 #'
