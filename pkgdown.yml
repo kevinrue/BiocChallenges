@@ -4,6 +4,7 @@ pkgdown_sha: ~
 articles:
   BiocChallenges: BiocChallenges.html
   challenges/biocchallenges_functionality: biocchallenges_functionality.html
+  challenges/instrumentation: instrumentation.html
   challenges/single_cell_gallery: single_cell_gallery.html
-last_built: 2020-11-28T09:46Z
+last_built: 2020-11-28T10:07Z
 
