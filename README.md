@@ -1,5 +1,5 @@
 
-# BiocChallenges
+# BiocChallenges <img src="man/figures/logo.png" align="right" alt="" width="180" />
 
 <!-- badges: start -->
 [![R build status](https://github.com/kevinrue/BiocChallenges/workflows/build_check_deploy/badge.svg)](https://github.com/kevinrue/BiocChallenges/actions)
