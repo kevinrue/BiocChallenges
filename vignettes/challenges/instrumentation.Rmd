@@ -5,7 +5,7 @@ author:
   affiliation: Harvard Medical School
   email: stvjc@channing.harvard.edu
 abstract: |
-  We will use the [collectl system]((http://collectl.sourceforge.net/index.html),
+  We will use the [collectl system](http://collectl.sourceforge.net/index.html),
   along with some functions available in the [Rcollectl package](https://github.com/vjcitn/Rcollectl),
   to analyze system resource consumption
   for various genomic computing tasks.  Ultimately we want to have a system
