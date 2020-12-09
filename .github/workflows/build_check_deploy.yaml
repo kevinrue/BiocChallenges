@@ -47,6 +47,12 @@ jobs:
           name: check-results
           path: check
 
+      - name: BiocCheck
+        run: |
+          BiocManager::install("BiocCheck")
+          BiocCheck::BiocCheck(".")
+        shell: Rscript {0}
+
       - name: Install covr
         run: |
            install.packages("covr")

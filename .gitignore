@@ -5,3 +5,4 @@ BiocChallenges.Rproj
 renv
 renv.lock
 docs
+.DS_Store
