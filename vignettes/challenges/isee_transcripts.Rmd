@@ -26,7 +26,7 @@ params:
     - "jgilis/iSEEtranscripts"
 ---
 
-```{r, child="_challenge_base.Rmd"}
+```{r, child=system.file(package="BiocChallenges", "rmd", "_challenge_base.Rmd")}
 ```
 
 ## Guidelines
