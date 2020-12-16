@@ -1,0 +1,39 @@
+---
+title: "Unlocking iSEE for transcript-level visualization"
+author:
+- name: Jeroen Gilis
+  affiliation: statOmics group at Ghent University Belgium
+  email: jeroen.gilis@ugent.be
+abstract: |
+  The primary aim of this project is to allow for transcript-level
+  visualizations in the iSEE framework. The expected deliverables are
+  two or three new panels to the iSEE interface. These panels should provide 
+  the user with relevant insights at the level of individual isoforms. 
+  By extension, this challenge can be seen a single application within 
+  the larger effort of unlocking iSEE for data with multiple modes.
+vignette: |
+  %\VignetteIndexEntry{Unlocking iSEE for transcript-level visualization}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+params:
+  date: "2020-12-16"
+  difficulty: "intermediate"
+  leaders:
+    value:
+      jgilis: "Jeroen Gilis"
+  topics:
+    - "Visualization"
+  duration: "1 week"
+  repositories:
+    - "jgilis/iSEEtranscripts"
+---
+
+```{r, child="_challenge_base.Rmd"}
+```
+
+## Guidelines
+
+Fork the original repository `jgilis/iSEEtranscripts`, 
+work on a branch of your `fork`, and submit a pull request when your 
+contribution is ready for review. Ideas and suggestions can also be 
+discussed by opening on contributing to an `Issue` in the linked repository.
