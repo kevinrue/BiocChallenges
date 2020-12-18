@@ -2,15 +2,20 @@
 % Please edit documentation in R/github.R
 \name{gh_stargazer_count}
 \alias{gh_stargazer_count}
+\alias{gh_latest_push_datetime}
 \title{Query Information from GitHub API}
 \usage{
 gh_stargazer_count(repo)
+
+gh_latest_push_datetime(repo)
 }
 \arguments{
 \item{repo}{GitHub repository, formatted as \code{owner/repo}.}
 }
 \value{
 \code{gh_stargazer_count()} returns the count of stargazers for a GitHub repository.
+
+\code{gh_latest_push_datetime()} returns the \code{\link{datetime}} of the latest push to a GitHub repository.
 }
 \description{
 Query Information from GitHub API
@@ -18,5 +23,6 @@ Query Information from GitHub API
 \examples{
 if (interactive()) {
     gh_stargazer_count("kevinrue/BiocChallenges")
+    gh_latest_push_datetime("kevinrue/BiocChallenges")
 }
 }
