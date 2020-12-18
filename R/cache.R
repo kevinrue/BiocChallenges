@@ -1,8 +1,8 @@
 #' Caching
 #'
-#' @rdname cache
-#'
 #' Caching is used to minimize the number of queries sent to rate-limited APIs such as GitHub.
+#'
+#' @rdname INTERNAL_cache
 #'
 #' @return
 #' `.get_cache_dir()` returns the path to the global [BiocChallenges-package] cache directory.
@@ -19,12 +19,12 @@
     rappdirs::user_cache_dir(appname = getPackageName())
 }
 
-#' @rdname cache
+#' @rdname INTERNAL_cache
 .get_cache_repos_dir <- function() {
     file.path(.get_cache_dir(), "repos")
 }
 
-#' @rdname cache
+#' @rdname INTERNAL_cache
 .setup_cache <- function() {
     cache_dir <- .get_cache_dir()
     if (dir.exists(cache_dir)) {
@@ -36,13 +36,21 @@
     dir.create(cache_repos, recursive = TRUE, showWarnings = FALSE)
 }
 
-#' @rdname cache
+#' @rdname INTERNAL_cache
 .get_cache_repo <- function(repo) {
     cache_dir <- .get_cache_repos_dir()
     rds_basename <- sprintf("%s.rds", repo)
     file.path(cache_dir, rds_basename)
 }
 
+#' Check GitHub Query Results
+#'
+#' @rdname INTERNAL_valid_github_query
+#'
+#' @param x The result of a GitHub query.
+#'
+#' @return A logical scalar.
+#' @importFrom methods is
 .valid_github_query <- function(x) {
     is(x, "gh_response")
 }
