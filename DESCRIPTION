@@ -1,6 +1,6 @@
 Package: BiocChallenges
 Title: Challenges for the Bioconductor community
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     person(given = "Kevin",
            family = "Rue-Albrecht",
@@ -21,7 +21,9 @@ BugReports: https://github.com/kevinrue/BiocChallenges/issues
 Imports:
     stringr,
     gh,
-    lubridate
+    lubridate,
+    rappdirs,
+    methods
 Suggests:
     knitr,
     rmarkdown,

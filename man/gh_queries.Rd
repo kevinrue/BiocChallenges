@@ -15,7 +15,7 @@ gh_latest_push_datetime(repo)
 \value{
 \code{gh_stargazer_count()} returns the count of stargazers for a GitHub repository.
 
-\code{gh_latest_push_datetime()} returns the \code{\link{datetime}} of the latest push to a GitHub repository.
+\code{gh_latest_push_datetime()} returns the character representation of the datetime for the latest push to a GitHub repository.
 }
 \description{
 Query Information from GitHub API

@@ -17,34 +17,22 @@
 #'     gh_latest_push_datetime("kevinrue/BiocChallenges")
 #' }
 gh_stargazer_count <- function(repo) { # nocov start
-    value <- tryCatch({
-        query <- gh::gh("/repos/:repo", repo = repo)
-        as.integer(query$stargazers_count)
-        },
-        error = function(e) {
-            warning(e$message)
-            return(NA_integer_)
-        }
-    )
+    query <- .cache_github_repo(repo)
+    if (is.na(query)) return(NA_integer_)
+    value <- as.integer(query$stargazers_count)
     value
 } # nocov end
 
 #' @rdname gh_queries
 #'
 #' @return
-#' `gh_latest_push_datetime()` returns the [`datetime`] of the latest push to a GitHub repository.
+#' `gh_latest_push_datetime()` returns the character representation of the datetime for the latest push to a GitHub repository.
 #' @export
 #' @importFrom lubridate as_datetime
 gh_latest_push_datetime <- function(repo) { # nocov start
-    value <- tryCatch({
-        query <- gh::gh("/repos/:repo", repo = repo)
-        as.character(as_datetime(query$pushed_at, tz = "GMT"))
-        },
-        error = function(e) {
-            warning(e$message)
-            return(NA_integer_)
-        }
-    )
+    query <- .cache_github_repo(repo)
+    if (is.na(query)) return(NA_character_)
+    value <- as.character(as_datetime(query$pushed_at, tz = "GMT"))
     value
 } # nocov end
 
@@ -74,4 +62,25 @@ gh_repositories_info_table <- function(repos) {
     )
     tab <- tab[order(tab$stargazers, decreasing = TRUE), ]
     tab
+}
+
+.cache_github_repo <- function(repo) {
+    cache_file <- .get_cache_repo(repo)
+    if (file.exists(cache_file)) {
+        value <- readRDS(cache_file)
+        return(value)
+    }
+    warning("Querying github")
+    value <- tryCatch({
+        query <- gh::gh("/repos/:repo", repo = repo)
+        query
+        },
+        error = function(e) {
+            warning(e$message)
+            return(NA)
+        }
+    )
+    dir.create(dirname(cache_file), recursive = TRUE, showWarnings = FALSE)
+    saveRDS(value, cache_file)
+    value
 }

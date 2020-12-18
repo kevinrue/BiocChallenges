@@ -12,7 +12,8 @@ test_that("gh_repositories_info_table can return an empty table", {
         gh_repositories_info_table(character(0)),
         data.frame(
             repository = character(0),
-            stargazers = integer(0)
+            stargazers = integer(0),
+            "latest push" = character(0)
         )
     )
 })
