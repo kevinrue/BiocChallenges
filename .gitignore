@@ -6,3 +6,4 @@ renv
 renv.lock
 docs
 .DS_Store
+INTERNAL_*
