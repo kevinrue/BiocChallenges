@@ -36,6 +36,8 @@
     dir.create(cache_repos, recursive = TRUE, showWarnings = FALSE)
 }
 
+#' @param repo GitHub repository, formatted as `owner/repo`.
+#'
 #' @rdname INTERNAL_cache
 .get_cache_repo <- function(repo) {
     cache_dir <- .get_cache_repos_dir()
