@@ -18,7 +18,7 @@
 #' }
 gh_stargazer_count <- function(repo) { # nocov start
     query <- .cache_github_repo(repo)
-    if (is.na(query)) return(NA_integer_)
+    if (!.valid_github_query(query)) return(NA_integer_)
     value <- as.integer(query$stargazers_count)
     value
 } # nocov end
@@ -31,7 +31,7 @@ gh_stargazer_count <- function(repo) { # nocov start
 #' @importFrom lubridate as_datetime
 gh_latest_push_datetime <- function(repo) { # nocov start
     query <- .cache_github_repo(repo)
-    if (is.na(query)) return(NA_character_)
+    if (!.valid_github_query(query)) return(NA_character_)
     value <- as.character(as_datetime(query$pushed_at, tz = "GMT"))
     value
 } # nocov end

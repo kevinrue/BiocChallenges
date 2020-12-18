@@ -43,3 +43,6 @@
     file.path(cache_dir, rds_basename)
 }
 
+.valid_github_query <- function(x) {
+    is(x, "gh_response")
+}
