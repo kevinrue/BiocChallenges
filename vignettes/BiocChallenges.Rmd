@@ -40,7 +40,8 @@ Topic tags can be any combination of valid
  and the following additional ones:
 
 ```{r, echo=FALSE, results='asis'}
-cat(sprintf("- `%s`", head(BiocChallenges::topic_tags,3)), sep = "\n")
+data("biocViewsVocab", package = "biocViews", envir = environment())
+cat(sprintf("- `%s`", setdiff(BiocChallenges::topic_tags, graph::nodes(biocViewsVocab))), sep = "\n")
 ```
 
 New topics can be submitted as [pull requests](https://github.com/kevinrue/BiocChallenges/pulls) editing the [topics.R](https://github.com/kevinrue/BiocChallenges/blob/main/R/topics.R) script.
