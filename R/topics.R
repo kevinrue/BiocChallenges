@@ -14,6 +14,7 @@
 
 #' @importFrom utils data
 #' @importFrom graph nodes
+#' @import biocViews
 .get_topic_tags <- function(){
     biocViewsVocab <- NULL
     data("biocViewsVocab",
