@@ -6,12 +6,19 @@
 #' `topic_tags` is a character vector of valid topic tags.
 "topic_tags"
 
-topic_tags <- sort(c(
-    "Challenges",
-    "Community",
-    "Single-cell",
-    "Visualization",
-    "Instrumentation"))
+#' @importFrom utils data
+#' @importFrom graph nodes
+.get_topic_tags <- function(){
+    biocViewsVocab <- NULL
+    data("biocViewsVocab",
+         package = "biocViews",
+         envir = environment())
+    c("Challenges",
+      "Community",
+      "Instrumentation",
+      sort(nodes(biocViewsVocab)))
+}
+topic_tags <- .get_topic_tags()
 
 #' Challenge Topics
 #'

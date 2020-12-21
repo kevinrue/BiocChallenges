@@ -23,7 +23,10 @@ Imports:
     gh,
     lubridate,
     rappdirs,
-    methods
+    methods,
+    utils,
+    graph,
+    biocViews
 Suggests:
     knitr,
     rmarkdown,
