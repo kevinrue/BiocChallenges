@@ -9,7 +9,9 @@
 .new_topics <- c(
   "Challenges",
   "Community",
-  "Instrumentation"
+  "Instrumentation",
+  "BioPlex",
+  "BugSigDB"    
 )
 
 #' @importFrom utils data
