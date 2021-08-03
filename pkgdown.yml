@@ -1,12 +1,13 @@
-pandoc: 2.7.3
+pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   BiocChallenges: BiocChallenges.html
   challenges/biocchallenges_functionality: biocchallenges_functionality.html
+  challenges/bioplex: bioplex.html
   challenges/build_failure_tracking: build_failure_tracking.html
   challenges/instrumentation: instrumentation.html
   challenges/isee_transcripts: isee_transcripts.html
   challenges/single_cell_gallery: single_cell_gallery.html
-last_built: 2020-12-21T21:21Z
+last_built: 2021-08-03T14:23Z
 
