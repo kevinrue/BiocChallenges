@@ -1,0 +1,282 @@
+---
+title: "Systematic analysis of published microbial signatures from BugSigDB"
+author:
+- name: Ludwig Geistlinger
+  affiliation: Center for Computational Biomedicine, Harvard Medical School
+  email: ludwig_geistlinger@hms.harvard.edu
+- name: Levi Waldron
+  affiliation: School of Public Health, City University of New York
+abstract: |
+    [BugSigDB](https://bugsigdb.org) is a manually curated database of microbial
+    signatures from published differential abundance studies, providing standardized
+    data on geography, health outcomes, host body sites, and experimental,
+    epidemiological, and statistical methods using controlled vocabulary.
+    To date, BugSigDB provides more than 2,000 signatures from over 500 published
+    studies, allowing systematic assessment of microbiome abundance changes within
+    and across experimental conditions and body sites.
+    The bugsigdbr package (https://github.com/waldronlab/bugsigdbr, submitted to Bioconductor)
+    implements access to BugSigDB from within R/Bioconductor. This includes import of
+    BugSigDB data into R/Bioconductor, utilities for extracting microbe signatures,
+    and export of the extracted signatures to plain text files in standard file formats
+    such as GMT.
+    The goal of this challenge is to introduce the BugSigDB database and package to
+    the community, and work together on several analysis and programming challenges
+    around the data including: (a) identification of body site-specific signatures
+    from healthy samples, (b) efficient calculation of similarity measures between
+    signatures across the whole database or specific subsets of it, (c) automatic
+    identification of candidate papers for curation based on recently proposed text
+    mining approaches, (d) ontology-based queries to the database using controlled
+    vocabulary for experimental factors and body sites, and (e) inference of abundance
+    changes along the taxonomic hierarchy using phylogenetic approaches such as
+    ancestral state reconstruction.
+vignette: |
+  %\VignetteIndexEntry{BugSigDB microbiome signatures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+params:
+  date: "2021-08-05"
+  difficulty: "advanced"
+  leaders:
+    value:
+      lgeistlinger: "Ludwig Geistlinger"
+      lwaldron: "Levi Waldron"
+  topics:
+    - "BugSigDB"
+  duration: "TBD"
+  repositories:
+    - "waldronlab/bugsigdbr"
+    - "waldronlab/BugSigDBStats"
+---
+
+```{r, child=system.file(package="BiocChallenges", "rmd", "_challenge_base.Rmd")}
+```
+
+## Project 1: Addition of body site-typical signatures
+
+**Background:** [bugsigdb.org](https://bugsigdb.org) provides signatures of
+differentially abundant microbial taxa that have been reported in the published
+literature, and is planned for official public release in the near future.
+One planned feature is to provide users with automated identification of similar
+signatures, and this can already be done offline with the `calcPairwiseOverlaps`
+function in [BugSigDBStats](https://github.com/waldronlab/BugSigDBStats).
+A useful comparison to have would be with the "typical" microbes that are present
+in healthy people at each body site, as these might be expected to be depleted
+in disease states but not enriched. This is not a typical use case of
+[bugsigdb.org](https://bugsigdb.org) but would be a useful addition nonetheless.
+
+**Proposed methods:** 
+Using the [curatedMetagenomicData](https://bioconductor.org/packages/curatedMetagenomicData)
+Biocondutor package (>=3.0.0): create a
+[TreeSummarizedExperiment](https://bioconductor.org/packages/TreeSummarizedExperiment) object
+per body site for all profiles from healthy individuals.
+See the `body_site` and `disease` columns in the `sampleMetadata` object, and
+the `returnSamples` function.
+Use the [mia::splitByRanks](https://rdrr.io/github/FelixErnst/mia/man/splitByRanks.html)
+function to add genus-level `altExps` to the `SummarizedExperiment` objects.
+
+Separately for each body site and for species/genus levels, identify taxa that
+have relative abundance > 0 in at least 50% of samples. 
+Write these to file as comma-separated NCBI IDs. Also write to file the number
+of samples in each body site. You can use something simple like `writeLines` to
+write out anything that is needed for [bugsigdb.org](https://bugsigdb.org) data
+entry, then the NCBI IDs will be copy-pasted into the signature entry form. 
+Also write the species and genus matrices to file. Upload code and result files
+to [zenodo.org](https://zenodo.org) to get a DOI.
+
+Add these signatures as a Study in [bugsigdb.org](https://bugsigdb.org), including
+the Zenodo DOI. It can be one Study, an Experiment for each body site, and a
+Signature for species plus a signature for genus in each body site.
+Note that comma-separated NCBI IDs can be bulk copy-pasted into the Signature entry form.
+
+**What a successful result would look like:**
+One new study in [bugsigdb.org](https://bugsigdb.org) referencing the Zenodo DOI,
+containing one Experiment per body site in
+[curatedMetagenomicData](https://bioconductor.org/packages/curatedMetagenomicData),
+and two signatures (species and genus) per Experiment. Some creativity will be
+required for figuring out how to fill in Experiment fields in
+[bugsigdb.org, for example "group 0 name" might be "blank control" with sample
+size 0, and we might have to allow some new statistical methods to be entered,
+because this isn’t standard.
+
+**Potential follow-up work:**
+This study would be used in analyses of other BugSigDB signatures, and
+mentioned in the manuscript in preparation.
+
+## Project 2: Fast conversion and analysis of signature similarity
+
+**Background:** There are currently more than 2,000 published signatures in
+BugSigDB, and we would like to do graph-based and clustering analysis based on 
+all pairwise similarities of these signatures, such as by
+[Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index).
+Performant methods are needed to calculate such a large distance matrix, visualize
+similar signatures, and add a small number of new signatures to the comparison
+without re-computing the entire distance matrix. 
+
+**Proposed methods:** The `calcPairwiseOverlaps` function from 
+[BugSigDBStats](https://github.com/waldronlab/BugSigDBStats) currently does a
+reasonably fast job of calculating pairwise overlaps between BugSigDB signatures
+(see the [vignette](http://waldronlab.io/BugSigDBStats/articles/BugSigDBStats.html)
+for full usage including data import using the
+[bugsigdbr](https://github.com/waldronlab/bugsigdbr)
+package), returning a long-format `data.frame` providing a network edge list.
+
+**What a successful result would look like:**
+Pull requests to
+[BugSigDBStats](https://github.com/waldronlab/BugSigDBStats)
+for 1) calculation of a full distance matrix for ~2,000 signatures
+in a few seconds, 2) cluster analysis, e.g. k-means clustering and hierarchical
+clustering.
+
+**Potential follow-up work:** Provision of a function using the results of above
+to immediately compare results of a new differential abundance analysis to the
+existing signatures in BugSigDB. A shiny app to do the same.
+
+## Project 3: Automatic identification of candidate papers
+
+**Background:** The ultimate goal of BugSigDB would be to capture the entire
+literature of human microbiome studies that have reported signatures of
+differentially abundant microbial taxa in some comparison of different study
+subjects. One challenge to meeting this goal is finding published studies that
+meet the basic criteria for inclusion: 1) the study is indexed in PubMed,
+2) the study reports one or more microbial signatures of host-associated
+microbiota, ie lists of microbial taxa found to be differentially abundant
+between study conditions or groups of study subjects.
+
+**Proposed methods:** A recently published tool called ASReview
+([van de Schoot et al., 2021](https://www.nature.com/articles/s42256-020-00287-7))
+applies machine learning to assist with  the prioritization of papers for
+systematic review. ASReview takes as input text (ie titles and abstracts) from
+search results, along with "true positive" results that have been manually
+confirmed to be relevant to the review, then predicts which other publications
+are most likely to be relevant.
+
+[ASReview](https://pypi.org/project/asreview/) is a command-line tool written in
+Python, that must be installed and run on the command-line. BugSigDB provides
+bulk export of its contents, including study PMIDs, titles, and abstracts, that
+could be used as the "true positive" input data (for example from the
+[Studies export page](https://bugsigdb.org/Help:Export) or from the
+[bugsigdbr](https://github.com/waldronlab/bugsigdbr) R package).
+
+Steps to apply ASReview to this problem would be something like:
+Find a PMID search term that captures most of the studies already in BugSigDB.
+This will probably return tens or hundreds of thousands of studies.
+Doing this precisely would require comparison to the >500 studies already in
+BugSigDB, but this isn’t critical at least at first, and a general PMID search
+like `(microbiome or microbiota) AND (sequencing OR 16S OR shotgun OR amplicon)`
+(currently returning >33,000 results) could be used as a start.
+One would then need to figure out how to use this search result as input to ASReview,
+and how to use the current studies in BugSigDB as positive results input in ASReview.
+Subsequently, one would use ASReview to produce a ranking of likely relevant
+studies not yet included in BugSigDB.
+
+**What a successful result would look like:**
+All studies near the top of the ASReview ranked list should be appropriate for
+entry into [BugSigDB](https://bugsigdb.org). The process should be easy to
+automate and update. On updates, studies already in BugSigDB should not be shown,
+leaving only candidates for new entry.
+
+**Potential follow-up work:**
+This search process could be incorporated into a GitHub Action and the results
+kept up to date in a public location, and provide a go-to list for studies that
+can be entered into BugSigDB. People wanting to do a systematic review of studies
+reporting differential microbial abundance for one particular health condition 
+or exposure could make minor modifications to the process to assist in identifying
+studies for their review.
+
+## Project 4: Ontology-based queries for experimental factors and body sites
+
+**Background:**
+The Semantic MediaWiki curation interface at bugsigdb.org enforces metadata
+annotation of signatures to follow established ontologies such as the
+[Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/) for condition, and
+the [Uber-Anatomy Ontology (UBERON)](https://www.ebi.ac.uk/ols/ontologies/uberon) for body
+site.
+The [bugsigdbr](https://github.com/waldronlab/bugsigdbr) package implements
+access to BugSigDB from within R/Bioconductor. This includes import of 
+BugSigDB data via the `importBugSigDB` function into an ordinary `data.frame`
+from which subsets of interests can be obtained.
+Such subsets can eg be obtained for signatures associated with
+certain experimental factors or specific body sites of interest.
+
+**Objective:** Support ontology-based subsetting of BugSigDB signatures. 
+
+**Proposed methods:**
+The [ontologyIndex](https://cran.r-project.org/web/packages/ontologyIndex/index.html)
+package implements functions for reading and querying ontologies in R.
+This includes the `get_ontology` function for reading ontologies from files in
+[OBO format](https://owlcollab.github.io/oboformat/doc/GO.format.obo-1_4.html).
+The OBO file for EFO is available
+[here](https://www.ebi.ac.uk/efo/efo.obo)
+and the OBO file for UBERON is available
+[here](http://ontologies.berkeleybop.org/uberon.obo).
+Subsetting BugSigDB signatures by an EFO term will then involve subsetting the
+`Condition` column to all descendants of that term in the EFO ontology and that 
+are present in the `Condition` column. And analogously, subsetting
+by an UBERON term will then involve subsetting the `Body site` column to all
+descendants of that term in the UBERON ontology and that are present in the 
+`Body site` column.
+
+**What a successful result would look like:**
+Pull request to the [bugsigdbr](https://github.com/waldronlab/bugsigdbr)
+github repository on a new branch (named *ontoquery*).
+Pull requests will be reviewed and discussed. Contributions will be acknowledged.
+
+**Potential follow-up work:**
+Discussion of how to implement high-level queries also for other columns of
+interest such as `Location of subjects`, `Host species`, and `Statistical test`.
+
+## Project 5: Inference of abundance changes via ancestral state reconstruction
+
+**Background:**
+Differential abundance studies typically report signatures resolved to the
+genus level (16S rRNA sequencing) or species level (whole-metagenome sequencing).
+In some cases, authors also make statements about differential abundance on a higher
+taxonomic rank for cases where supposedly all (at least all investigated) taxa of
+a lower taxonomic rank display differential abundance. An example would be if both
+known species of the genus
+[Gabonibacter](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=1911312),
+ie *Gabonibacter massiliensis* and *Gabonibacter timonensis*, would be found with
+increased abundance in a certain condition, authors would sometimes conclude that
+the genus *Gabonibacter* is overall found with increased abundance, resulting in
+mixed signatures of different taxonomic ranks.  
+
+[Ancestral state reconstruction (ASR)](https://en.wikipedia.org/wiki/Ancestral_reconstruction)
+is a phylogenetic approach for inferring ancestor states from characteristics measured
+for their descendants. For example, given differential abundance on the species
+level, this could thus be used to infer differential abundance on the genus level,
+and further up the taxonomy. 
+
+**Objective:** Can we apply ASR for harmonization of BugSigDB signatures to a
+given taxonomic rank?
+
+**Proposed method**: 
+Microbial signatures in BugSigDB follow the nomenclature of the
+[NCBI Taxonomy Database](https://www.ncbi.nlm.nih.gov/taxonomy),
+restricted to microbial clades profiled by [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn).
+The phylogenetic tree for MetaPhlan3 species in
+[Newick format](https://en.wikipedia.org/wiki/Newick_format)
+is available
+[here](https://raw.githubusercontent.com/biobakery/MetaPhlAn/master/metaphlan/utils/mpa_v30_CHOCOPhlAn_201901_species_tree.nwk).
+The `ace` function from the 
+[ape](https://cran.r-project.org/web/packages/ape/index.html) 
+package provides a standard implementation of ancestral state reconstruction based
+on maximum likelihood estimation for discrete characters (here: "UP" or "DOWN" to
+indicate increased or decreased abundance.)
+
+**What a successful result would look like:**
+Pull request to the 
+[BugSigDBStats](https://github.com/waldronlab/BugSigDBStats)
+github repository outlining the approach in a separate ancestral state
+reconstruction vignette (`.Rmd` file in the `vignettes` folder).
+Pull requests will be reviewed and discussed.
+Accepted contributions will be acknowledged.
+
+**Potential follow-up work:** If shown to be a feasible approach, incorporation
+into `bugsigdbr::getSignatures` should be considered. The logical argument
+`exact.tax.level` currently harmonizes signatures by only including taxa given
+at the indicated `tax.level` (`exact.tax.level = TRUE`), or extracts a more
+general `tax.level` for microbes given at a more specific taxonomic
+level by simply cutting the tree at the desired `tax.level` (`exact.tax.level = FALSE`).
+Alternatively, simple majority votes or estimation via ASR 
+could be provided as additional options for the `exact.tax.level` argument.
+  
