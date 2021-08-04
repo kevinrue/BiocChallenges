@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../../index.html">BiocChallenges</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.6</span>
       </span>
     </div>
 
@@ -69,6 +69,9 @@
     </li>
     <li>
       <a href="../../articles/challenges/bioplex.html">Integrative analysis of proteome-scale protein-protein interaction networks from the BioPlex project</a>
+    </li>
+    <li>
+      <a href="../../articles/challenges/bugsigdb.html">Systematic analysis of published microbial signatures from BugSigDB</a>
     </li>
     <li>
       <a href="../../articles/challenges/build_failure_tracking.html">Facilitating diagnosis of Bioconductor package build failures</a>
@@ -185,15 +188,15 @@
 <td align="left">
 <i class="fab fa-github"></i> <a href="https://github.com/ccb-hms/BioPlex">ccb-hms/BioPlex</a>
 </td>
-<td align="right">0</td>
-<td align="left">2021-08-03 05:36:46</td>
+<td align="right">2</td>
+<td align="left">2021-08-04 05:36:36</td>
 </tr>
 <tr class="even">
 <td align="left">
 <i class="fab fa-github"></i> <a href="https://github.com/ccb-hms/BioPlexAnalysis">ccb-hms/BioPlexAnalysis</a>
 </td>
 <td align="right">0</td>
-<td align="left">2021-08-03 07:05:50</td>
+<td align="left">2021-08-04 07:36:40</td>
 </tr>
 <tr class="odd">
 <td align="left">
@@ -221,9 +224,9 @@
 <a href="#project-2-network-propagation-of-genetic-disease-associations" class="anchor"></a>Project 2: Network propagation of genetic disease associations</h2>
 <p><strong>Background:</strong> Network propagation of genetic disease associations is an approach for identifying potential drug targets (<a href="https://doi.org/10.1038/s41598-020-77847-9">MacNamara et al., 2020</a>). Such approaches typically leverage publicly available collections of genes and variants associated with human diseases such as <a href="https://www.opentargets.org/">OpenTargets</a>. OpenTargets integrates data from expert curated repositories, GWAS catalogues, animal models, and the scientific literature. It has been shown that protein networks from specific functional linkages such as protein complexes are suitable for simple guilt-by-association network propagation approaches (<a href="https://doi.org/10.1038/s41598-020-77847-9">MacNamara et al., 2020</a>). Global protein–protein interaction networks typically require more sophisticated approaches such as <a href="https://github.com/raphael-group/hotnet2">HotNet2</a>.</p>
 <p><strong>Objective:</strong> Application of network propagation methods to CORUM complexes and BioPlex networks using genetic disease association scores from OpenTargets.</p>
-<p><strong>Proposed methods</strong>: A list of all OpenTargets datasets is available from the <a href="https://platform.opentargets.org/downloads">Platform Data Downloads</a> page. Example scripts for accessing the data from within R are available <a href="https://platform-docs.opentargets.org/data-access/datasets">here</a>. Following <a href="https://doi.org/10.1038/s41598-020-77847-9">MacNamara et al., 2020</a>, one would first the use scored gene-disease associations from OpenTargets to obtain high‑confidence genetic hits (HCGHs). Proxy gene sets of HCGHs can then be defined by identifying genes that (i) share a protein complex with a HCGH, (ii) are annotated to the same KEGG or REACTOME pathway, (iii) are first- or second-degree neighbors in a BioPlex network, and (iv) are found in a network module identified with approaches such as <a href="https://bioconductor.org/packages/BioNet">BioNet</a> or <a href="https://github.com/raphael-group/hotnet2">HotNet2</a>.</p>
+<p><strong>Proposed methods</strong>: A list of all OpenTargets datasets is available from the <a href="https://platform.opentargets.org/downloads">Platform Data Downloads</a> page. Example scripts for accessing the data from within R are available <a href="https://platform-docs.opentargets.org/data-access/datasets">here</a>. Following <a href="https://doi.org/10.1038/s41598-020-77847-9">MacNamara et al., 2020</a>, one would first use the scored gene-disease associations from OpenTargets to obtain high‑confidence genetic hits (HCGHs). Proxy gene sets of HCGHs can then be defined by identifying genes that (i) share a protein complex with a HCGH, (ii) are annotated to the same KEGG or REACTOME pathway, (iii) are first- or second-degree neighbors in a BioPlex network, and (iv) are found in a network module identified with approaches such as <a href="https://bioconductor.org/packages/BioNet">BioNet</a> or <a href="https://github.com/raphael-group/hotnet2">HotNet2</a>.</p>
 <p><strong>What a successful result would look like:</strong> Pull request to the <a href="https://github.com/ccb-hms/BioPlexAnalysis">BioPlexAnalysis</a> github repository outlining the approach in a separate network propagation vignette (<code>.Rmd</code> file in the <code>vignettes</code> folder). Pull requests will be reviewed and discussed. Accepted contributions will be acknowledged.</p>
-<p><strong>Potential follow-up work</strong>: Discussion of how to best encapsulate the OpenTargets gene-disease associations in a package with a <a href="https://cran.r-project.org/web/packages/ggnetwork/index.html">sparklyr</a> backend.</p>
+<p><strong>Potential follow-up work</strong>: Discussion of how to best encapsulate the OpenTargets gene-disease associations in a package with a <a href="https://cran.r-project.org/web/packages/sparklyr/index.html">sparklyr</a> backend.</p>
 </div>
 <div id="project-3-graphframes-backend-for-representation-of-bioplex-ppi-networks" class="section level2">
 <h2 class="hasAnchor">
@@ -237,7 +240,7 @@
 <div id="project-4-shiny-graph-viewer-for-exploration-of-node-and-edge-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#project-4-shiny-graph-viewer-for-exploration-of-node-and-edge-data" class="anchor"></a>Project 4: Shiny graph viewer for exploration of node and edge data</h2>
-<p><strong>Background:</strong> A variety of data and annotations are available for the nodes (= proteins) and the edges (= PPIs) of the BioPlex networks. As illustrated in the <a href="https://ccb-hms.github.io/BioPlex/articles/BioPlex.html">BioPlex data retrieval vignette</a>, this includes (i) for the nodes: transcript and protein abundance, results of differential expression analysis, disease association scores, etc., and (ii) for the edges: confidence scores, interaction probabilities,etc. On the other hand, graph algorithms such as maximum scoring subnetwork analysis, potentially combined with gene set enrichment analysis, typically produce subnetwork/pathway-sized graphs of interest prompting further interactive exploration.</p>
+<p><strong>Background:</strong> A variety of data and annotations are available for the nodes (= proteins) and the edges (= PPIs) of the BioPlex networks. As illustrated in the <a href="https://ccb-hms.github.io/BioPlex/articles/BioPlex.html">BioPlex data retrieval vignette</a>, this includes (i) for the nodes: transcript and protein abundance, results of differential expression analysis, disease association scores, etc., and (ii) for the edges: confidence scores, interaction probabilities, etc. On the other hand, graph algorithms such as maximum scoring subnetwork analysis, potentially combined with gene set enrichment analysis, typically produce subnetwork/pathway-sized graphs of interest prompting further interactive exploration.</p>
 <p><strong>Objective</strong>: Setting up an R/Shiny graph viewer that allows exploration of data and annotations for nodes and edges of the networks.</p>
 <p><strong>Proposed methods:</strong> The <a href="https://github.com/ccb-hms/GraphViewer">GraphViewer</a> github repository contains a scaffold implementation based on <a href="https://cran.r-project.org/web/packages/ggnetwork/index.html">ggnetwork</a>. Alternatives implementing a <a href="https://cran.r-project.org/web/packages/ggnetwork/index.html">ggplot2</a> approach to the visualization of graphs and networks such as <a href="https://cran.r-project.org/web/packages/ggraph/index.html">ggraph</a> exist. The app is supposed to take subnetwork/pathway-sized graphs of interest as input, and is expected to support overlay of node attributes and edge attributes using ggplot2 grammar. The UI should be minimal. A drop-down for the node data attribute to display on the graph, and a drop-down to display the edge data attribute to display on a graph. Upload of a serialized graph object by the user should be supported.</p>
 <p><strong>What a successful result would look like</strong>: Pull request to the <a href="https://github.com/ccb-hms/GraphViewer">GraphViewer</a> github repository. Pull requests will be reviewed and discussed. Contributions will be acknowledged.</p>
