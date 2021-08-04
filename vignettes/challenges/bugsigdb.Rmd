@@ -230,21 +230,23 @@ interest such as `Location of subjects`, `Host species`, and `Statistical test`.
 **Background:**
 Differential abundance studies typically report signatures resolved to the
 genus level (16S rRNA sequencing) or species level (whole-metagenome sequencing).
-In some cases, authors also make statements about differential abundance on a higher
-taxonomic rank for cases where supposedly all (at least all investigated) taxa of
-a lower taxonomic rank display differential abundance. An example would be if both
-known species of the genus
+In some cases, authors also report differential abundance at higher
+taxonomic levels based on analysis of relative abundance of that taxonomic level
+as a whole, resulting from summing relative abundances across branches at a lower
+taxonomic rank. An example would be if the sum of the relative abundances of both
+known species of the genus 
 [Gabonibacter](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=1911312),
 ie *Gabonibacter massiliensis* and *Gabonibacter timonensis*, would be found with
-increased abundance in a certain condition, authors would sometimes conclude that
+increased abundance in a certain condition, authors would conclude that
 the genus *Gabonibacter* is overall found with increased abundance, resulting in
 mixed signatures of different taxonomic ranks.  
 
 [Ancestral state reconstruction (ASR)](https://en.wikipedia.org/wiki/Ancestral_reconstruction)
 is a phylogenetic approach for inferring ancestor states from characteristics measured
-for their descendants. For example, given differential abundance on the species
-level, this could thus be used to infer differential abundance on the genus level,
-and further up the taxonomy. 
+for their descendants. For example, given differential abundance (or any other 
+microbial trait) on the species
+level, this could thus be used to infer differential abundance (or any other
+microbial trait) on the genus level, and further up the taxonomy. 
 
 **Objective:** Can we apply ASR for harmonization of BugSigDB signatures to a
 given taxonomic rank?
