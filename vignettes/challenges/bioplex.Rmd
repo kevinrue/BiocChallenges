@@ -129,7 +129,7 @@ A list of all OpenTargets datasets is available from the
 page. Example scripts for accessing the data from within R are available
 [here](https://platform-docs.opentargets.org/data-access/datasets).
 Following [MacNamara et al., 2020](https://doi.org/10.1038/s41598-020-77847-9),
-one would first the use scored gene-disease associations from OpenTargets to obtain
+one would first use the scored gene-disease associations from OpenTargets to obtain
 high‑confidence genetic hits (HCGHs). 
 Proxy gene sets of HCGHs can then be defined by identifying genes that (i) share 
 a protein complex with a HCGH, (ii) are annotated to the same KEGG or REACTOME pathway,
@@ -149,7 +149,7 @@ Accepted contributions will be acknowledged.
 
 **Potential follow-up work**:
 Discussion of how to best encapsulate the OpenTargets gene-disease associations
-in a package with a [sparklyr](https://cran.r-project.org/web/packages/ggnetwork/index.html)
+in a package with a [sparklyr](https://cran.r-project.org/web/packages/sparklyr/index.html)
 backend. 
 
 
@@ -201,7 +201,7 @@ to make use of the `GraphFrames` API instead.
 the [BioPlex data retrieval vignette](https://ccb-hms.github.io/BioPlex/articles/BioPlex.html),
 this includes (i) for the nodes: transcript and protein abundance, results of
 differential expression analysis, disease association scores, etc., and (ii) for
-the edges: confidence scores, interaction probabilities,etc.
+the edges: confidence scores, interaction probabilities, etc.
 On the other hand, graph algorithms such as maximum scoring subnetwork analysis,
 potentially combined with gene set enrichment analysis, typically produce 
 subnetwork/pathway-sized graphs of interest prompting further interactive
