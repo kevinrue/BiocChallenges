@@ -1,0 +1,35 @@
+---
+title: "Upgrading biocViews with EDAM"
+author:
+- name: Vince Carey
+  affiliation: Harvard Medical School
+  email: stvjc@channing.harvard.edu
+abstract: |
+  The [EDAM ontology](https://github.com/edamontology/edamontology) should be useful
+  for improving the organization of Bioconductor resources.  This challenge considers how
+  to integrate information in the ontology with biocViews terms.  It may be possible to
+  reconceptualize the role of biocViews in project infrastructure in the context of this
+  challenge.
+vignette: |
+  %\VignetteIndexEntry{Upgrading biocViews with EDAM}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+params:
+  date: "2021-10-30"
+  difficulty: "advanced"
+  leaders:
+    value:
+      vjcitn: "Vince Carey"
+  topics:
+    - "Challenges"
+  duration: "2 month(s)"
+---
+
+```{r, child=system.file(package="BiocChallenges", "rmd", "_challenge_base.Rmd")}
+```
+
+## Guidelines
+
+Investigate the biocViews vocabulary, and the EDAM ontology.  For motivation, consider the display:
+
+
