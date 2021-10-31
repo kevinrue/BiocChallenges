@@ -1,6 +1,6 @@
 Package: BiocChallenges
 Title: Challenges for the Bioconductor community
-Version: 0.0.7
+Version: 0.0.7001
 Authors@R: 
     person(given = "Kevin",
            family = "Rue-Albrecht",

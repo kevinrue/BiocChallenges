@@ -30,9 +30,30 @@ params:
 
 ## Guidelines
 
-Investigate the biocViews vocabulary, and the EDAM ontology.  For motivation, consider the display:
+### Note
 
-<img src="man/figures/EDAM.png" align="right" alt="" width="180" />
+This task can impact several aspects of Bioconductor and R packages for
+genomics.  
+
+- First, use of [EDAM](https://github.com/edamontology/edamontology)
+to tag Bioconductor packages and resources may aid in the processes of publicizing and discovering
+software and data
+- Second, an EDAMviews tag may be added as an endorsed field for package DESCRIPTION
+- Third, EDAM may integrate into the presentation of Bioconductor resources in the same
+manner as biocViews does presently; see the [search box for software](https://bioconductor.org/packages/release/BiocViews.html#___Software).
+
+
+### Evaluate EDAM and compare to biocViews
+
+Investigate the biocViews vocabulary, and the EDAM ontology.  For motivation, consider the display
+derived from [the EDAM browser](https://edamontology.github.io/edam-browser/#operation_0533):
+
+<p>
+<img src="https://storage.googleapis.com/bioc-anvil-images/EDAM.png" alt="" width="800" />
+<p>
 
 How can we take advantage of this terminology and concept structure?
+
+- Are there terms in biocViews for which EDAM terms are ready-to-use substitutes?
+- Are there concepts in biocViews that are lacking in EDAM that should be proposed for additions?
 
