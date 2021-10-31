@@ -1,8 +1,9 @@
-pandoc: 2.11.4
+pandoc: 2.14.0.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   BiocChallenges: BiocChallenges.html
+  challenges/EDAMviews: EDAMviews.html
   challenges/biocchallenges_functionality: biocchallenges_functionality.html
   challenges/bioplex: bioplex.html
   challenges/bugsigdb: bugsigdb.html
@@ -10,5 +11,5 @@ articles:
   challenges/instrumentation: instrumentation.html
   challenges/isee_transcripts: isee_transcripts.html
   challenges/single_cell_gallery: single_cell_gallery.html
-last_built: 2021-08-04T13:46Z
+last_built: 2021-10-31T21:01Z
 

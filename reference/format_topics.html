@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BiocChallenges</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7001</span>
       </span>
     </div>
 
@@ -107,6 +107,9 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/challenges/EDAMviews.html">Upgrading biocViews with EDAM</a>
+    </li>
     <li>
       <a href="../articles/challenges/biocchallenges_functionality.html">Contribute new functionality to BiocChallenges</a>
     </li>
@@ -188,261 +191,264 @@
     <p><code>format_topics()</code> returns a character value indicating the challenge topic tags.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>topic_tags</span>
-</div><div class='output co'>#&gt;   [1] "aCGH"                           "adme16cod"                     
-#&gt;   [3] "AffymetrixChip"                 "ag"                            
-#&gt;   [5] "AgilentChip"                    "Agroinformatics"               
-#&gt;   [7] "Alignment"                      "AlternativeSplicing"           
-#&gt;   [9] "Annotation"                     "AnnotationData"                
-#&gt;  [11] "AnnotationHub"                  "AnnotationHubSoftware"         
-#&gt;  [13] "AnnotationWorkflow"             "Anopheles_gambiae"             
-#&gt;  [15] "Anopheles_gambiae_Data"         "Apis_mellifera"                
-#&gt;  [17] "Apis_mellifera_Data"            "Arabidopsis_lyrata"            
-#&gt;  [19] "Arabidopsis_lyrata_Data"        "Arabidopsis_thaliana"          
-#&gt;  [21] "Arabidopsis_thaliana_Data"      "ArrayExpress"                  
-#&gt;  [23] "Asparagus_officinalis"          "AssayDomain"                   
-#&gt;  [25] "AssayDomainData"                "ATACSeq"                       
-#&gt;  [27] "ath1121501"                     "Bacillus_subtilis"             
-#&gt;  [29] "Bacillus_subtilis_Data"         "BasicWorkflow"                 
-#&gt;  [31] "BatchEffect"                    "Bayesian"                      
-#&gt;  [33] "BioCarta"                       "BiocViews"                     
-#&gt;  [35] "BiologicalQuestion"             "BiomedicalInformatics"         
-#&gt;  [37] "Biophysics"                     "BioPlex"                       
-#&gt;  [39] "Bos_taurus"                     "Bos_taurus_Data"               
-#&gt;  [41] "BreastCancerData"               "BSgenome"                      
-#&gt;  [43] "BugSigDB"                       "Caenorhabditis_elegans"        
-#&gt;  [45] "Caenorhabditis_elegans_Data"    "Callithrix_jacchus"            
-#&gt;  [47] "Callithrix_jacchus_Data"        "CancerData"                    
-#&gt;  [49] "Canis_familiaris"               "Canis_familiaris_Data"         
-#&gt;  [51] "cdf"                            "celegans"                      
-#&gt;  [53] "CellBasedAssays"                "CellBiology"                   
-#&gt;  [55] "CellCulture"                    "CGHData"                       
-#&gt;  [57] "Challenges"                     "Cheminformatics"               
-#&gt;  [59] "ChIPchip"                       "ChipDb"                        
-#&gt;  [61] "ChipManufacturer"               "ChipName"                      
-#&gt;  [63] "ChipOnChip"                     "ChipOnChipData"                
-#&gt;  [65] "ChIPSeq"                        "ChIPSeqData"                   
-#&gt;  [67] "Chlamydomonas_reinhardtii"      "Cicer_arietinum"               
-#&gt;  [69] "Ciona_intestinalis"             "Ciona_intestinalis_Data"       
-#&gt;  [71] "Classification"                 "ClonetechChip"                 
-#&gt;  [73] "Clustering"                     "CodelinkChip"                  
-#&gt;  [75] "ColonCancerData"                "Community"                     
-#&gt;  [77] "ComparativeGenomics"            "ComputationalChemistry"        
-#&gt;  [79] "COPDData"                       "CopyNumberVariation"           
-#&gt;  [81] "CopyNumberVariationData"        "Coverage"                      
-#&gt;  [83] "CpGIsland"                      "CpGIslandData"                 
-#&gt;  [85] "CRISPR"                         "CustomArray"                   
-#&gt;  [87] "CustomCDF"                      "CustomDBSchema"                
-#&gt;  [89] "Danio_rerio"                    "Danio_rerio_Data"              
-#&gt;  [91] "DataImport"                     "DataRepresentation"            
-#&gt;  [93] "db0"                            "ddPCR"                         
-#&gt;  [95] "DecisionTree"                   "DemethylateRegionDetection"    
-#&gt;  [97] "DenovoAssembler"                "DenovoGenome"                  
-#&gt;  [99] "DenovoTranscriptome"            "DifferentialDNA3DStructure"    
-#&gt; [101] "DifferentialExpression"         "DifferentialMethylation"       
-#&gt; [103] "DifferentialPeakCalling"        "DifferentialSplicing"          
-#&gt; [105] "DifferentialSplicingWorkflow"   "DimensionReduction"            
-#&gt; [107] "DiseaseModel"                   "DNA3DStructure"                
-#&gt; [109] "DNAMethylation"                 "DNASeq"                        
-#&gt; [111] "DNASeqData"                     "DNaseSeq"                      
-#&gt; [113] "DriverMutation"                 "drosgenome1"                   
-#&gt; [115] "Drosophila_melanogaster"        "Drosophila_melanogaster_Data"  
-#&gt; [117] "Drosophila_virilis"             "Drosophila_virilis_Data"       
-#&gt; [119] "drosophila2"                    "ENCODE"                        
-#&gt; [121] "Epigenetics"                    "EpigeneticsWorkflow"           
-#&gt; [123] "Epitranscriptomics"             "Eremothecium_gossypii"         
-#&gt; [125] "Eremothecium_gossypii_Data"     "Escherichia_coli"              
-#&gt; [127] "Escherichia_coli_Data"          "EuPathDB"                      
-#&gt; [129] "ExomeSeq"                       "ExomeSeqData"                  
-#&gt; [131] "ExonArray"                      "ExperimentalDesign"            
-#&gt; [133] "ExperimentData"                 "ExperimentHub"                 
-#&gt; [135] "ExperimentHubSoftware"          "ExpressionData"                
-#&gt; [137] "FeatureExtraction"              "FlowCytometry"                 
-#&gt; [139] "FlowCytometryData"              "FRMA"                          
-#&gt; [141] "FunctionalAnnotation"           "FunctionalGenomics"            
-#&gt; [143] "FunctionalPrediction"           "GACustomCDF"                   
-#&gt; [145] "Gallus_gallus"                  "Gallus_gallus_Data"            
-#&gt; [147] "Gasterosteus_aculeatus"         "Gasterosteus_aculeatus_Data"   
-#&gt; [149] "GEChip"                         "GeneCardsCustomSchema"         
-#&gt; [151] "GeneExpression"                 "GeneExpressionWorkflow"        
-#&gt; [153] "GeneFusionDetection"            "GenePrediction"                
-#&gt; [155] "GeneRegulation"                 "GeneSetEnrichment"             
-#&gt; [157] "GeneSignaling"                  "GeneTarget"                    
-#&gt; [159] "Genetics"                       "GeneticVariability"            
-#&gt; [161] "Genome"                         "GenomeAnnotation"              
-#&gt; [163] "GenomeAssembly"                 "GenomeBrowsers"                
-#&gt; [165] "GenomeWideAssociation"          "GenomicSequence"               
-#&gt; [167] "GenomicVariantsWorkflow"        "GenomicVariation"              
-#&gt; [169] "GenotypingArray"                "GenotypingArrayData"           
-#&gt; [171] "GEO"                            "Germline"                      
-#&gt; [173] "GermlineMutation"               "Glycine_max"                   
-#&gt; [175] "Glycine_max_Data"               "GO"                            
-#&gt; [177] "GraphAndNetwork"                "GUI"                           
-#&gt; [179] "h10kcod"                        "h20kcod"                       
-#&gt; [181] "HapMap"                         "hcg110"                        
-#&gt; [183] "hcgi12k"                        "hcgi8k"                        
-#&gt; [185] "hgfocus"                        "hgu133a"                       
-#&gt; [187] "hgu133a2"                       "hgu133b"                       
-#&gt; [189] "hgu133plus2"                    "hgu95a"                        
-#&gt; [191] "hgu95av2"                       "hgu95b"                        
-#&gt; [193] "hgu95c"                         "hgu95d"                        
-#&gt; [195] "hgu95e"                         "hguatlas13k"                   
-#&gt; [197] "hgug4100a"                      "hgug4101a"                     
-#&gt; [199] "hgug4110b"                      "hgug4111a"                     
-#&gt; [201] "hgug4112a"                      "hguqiagenv3"                   
-#&gt; [203] "hi16cod"                        "HiC"                           
-#&gt; [205] "HiddenMarkovModel"              "HighThroughputImagingData"     
-#&gt; [207] "HistoneModification"            "HIVData"                       
-#&gt; [209] "Homo_sapiens"                   "Homo_sapiens_Data"             
-#&gt; [211] "Hordeum_vulgare"                "Hordeum_vulgare_Data"          
-#&gt; [213] "hs25kresogen"                   "hu35ksuba"                     
-#&gt; [215] "hu35ksubb"                      "hu35ksubc"                     
-#&gt; [217] "hu35ksubd"                      "hu6800"                        
-#&gt; [219] "HuO22"                          "hwgcod"                        
-#&gt; [221] "IlluminaChip"                   "illuminaHumanv1"               
-#&gt; [223] "illuminaHumanv2"                "illuminaMousev1"               
-#&gt; [225] "illuminaMousev1p1"              "illuminaRatv1"                 
-#&gt; [227] "ImagingMassSpectrometry"        "ImagingMassSpectrometryData"   
-#&gt; [229] "ImmunoOncology"                 "ImmunoOncologyData"            
-#&gt; [231] "ImmunoOncologyWorkflow"         "indac"                         
-#&gt; [233] "INDACChip"                      "IndelDetection"                
-#&gt; [235] "Infrastructure"                 "InparanoidDb"                  
-#&gt; [237] "Instrumentation"                "JazaerimetaData"               
-#&gt; [239] "KEGG"                           "KidneyCancerData"              
-#&gt; [241] "Kluyveromyces_lactis"           "Kluyveromyces_lactis_Data"     
-#&gt; [243] "LeukemiaCancerData"             "LinkageDisequilibrium"         
-#&gt; [245] "Lipidomics"                     "lumiHumanV1"                   
-#&gt; [247] "lumiHumanV2"                    "lumiMouseV1"                   
-#&gt; [249] "lumiRatV1"                      "LungCancerData"                
-#&gt; [251] "m10kcod"                        "m20kcod"                       
-#&gt; [253] "Macaca_fascicularis"            "Macaca_mulatta"                
-#&gt; [255] "Macaca_mulatta_Data"            "Magnaporthe_grisea"            
-#&gt; [257] "Magnaporthe_grisea_Data"        "MassSpectrometry"              
-#&gt; [259] "MassSpectrometryData"           "MathematicalBiology"           
-#&gt; [261] "MBNICustomCDF"                  "Medicago_truncatul_Data"       
-#&gt; [263] "Medicago_truncatula"            "MeSHDb"                        
-#&gt; [265] "Metabolomics"                   "MetagenomeAssembly"            
-#&gt; [267] "Metagenomics"                   "MethylationArray"              
-#&gt; [269] "MethylationArrayData"           "MethylSeq"                     
-#&gt; [271] "MethylSeqData"                  "mgu74a"                        
-#&gt; [273] "mgu74av2"                       "mgu74b"                        
-#&gt; [275] "mgu74bv2"                       "mgu74c"                        
-#&gt; [277] "mgu74cv2"                       "mguatlas5k"                    
-#&gt; [279] "mgug4121a"                      "mgug4122a"                     
-#&gt; [281] "mi16cod"                        "Microarray"                    
-#&gt; [283] "MicroarrayData"                 "MicrobialStrain"               
-#&gt; [285] "Microbiome"                     "MicrobiomeData"                
-#&gt; [287] "MicroRNAArray"                  "MicroRNAArrayData"             
-#&gt; [289] "MicrosatelliteDetection"        "MicrotitrePlateAssay"          
-#&gt; [291] "MicrotitrePlateAssayData"       "miRNA"                         
-#&gt; [293] "miRNAData"                      "mm24kresogen"                  
-#&gt; [295] "MNaseSeq"                       "moe430a"                       
-#&gt; [297] "moe430b"                        "Monodelphis_domestica"         
-#&gt; [299] "Monodelphis_domestica_Data"     "MotifAnnotation"               
-#&gt; [301] "MotifDiscovery"                 "mouse4302"                     
-#&gt; [303] "mouse430a2"                     "mpedbarray"                    
-#&gt; [305] "mRNAArrayData"                  "mRNAMicroarray"                
-#&gt; [307] "mu11ksuba"                      "mu11ksubb"                     
-#&gt; [309] "Mu15v1"                         "mu19ksuba"                     
-#&gt; [311] "mu19ksubb"                      "mu19ksubc"                     
-#&gt; [313] "Mu22v3"                         "MultiChannel"                  
-#&gt; [315] "MultiChannelData"               "MultidimensionalScaling"       
-#&gt; [317] "MultipleComparison"             "MultipleSequenceAlignment"     
-#&gt; [319] "Mus_musculus"                   "Mus_musculus_Data"             
-#&gt; [321] "mwgcod"                         "NCI"                           
-#&gt; [323] "NCINatureCurated"               "Network"                       
-#&gt; [325] "NetworkEnrichment"              "NetworkInference"              
-#&gt; [327] "NeuralNetwork"                  "Neurospora_crassa"             
-#&gt; [329] "Neurospora_crassa_Data"         "Normalization"                 
-#&gt; [331] "Norway981"                      "NucleosomePositioning"         
-#&gt; [333] "Oncorhynchus_mykiss"            "Oncorhynchus_mykiss_Data"      
-#&gt; [335] "OneChannel"                     "OneChannelData"                
-#&gt; [337] "OperonHumanV3"                  "Organism"                      
-#&gt; [339] "OrganismData"                   "OrganismDb"                    
-#&gt; [341] "OrgDb"                          "Oryza_sativa"                  
-#&gt; [343] "Oryza_sativa_Data"              "OvarianCancerData"             
-#&gt; [345] "PackageType"                    "PackageTypeData"               
-#&gt; [347] "Pan_paniscus"                   "Pan_paniscus_Data"             
-#&gt; [349] "Pan_troglodytes"                "Pan_troglodytes_Data"          
-#&gt; [351] "PartheenMetaData"               "PathwayInteractionDatabase"    
-#&gt; [353] "Pathways"                       "PatternLogic"                  
-#&gt; [355] "PeakDetection"                  "pedbarrayv10"                  
-#&gt; [357] "pedbarrayv9"                    "Pharmacogenetics"              
-#&gt; [359] "Pharmacogenomics"               "Phylogenetics"                 
-#&gt; [361] "Plasmodium_falciparum"          "Plasmodium_falciparum_Data"    
-#&gt; [363] "PolyPhen"                       "PooledScreens"                 
-#&gt; [365] "Preprocessing"                  "PrincipalComponent"            
-#&gt; [367] "probe"                          "Project1000genomes"            
-#&gt; [369] "ProprietaryPlatforms"           "ProprietaryPlatformsData"      
-#&gt; [371] "ProstateCancerData"             "Proteome"                      
-#&gt; [373] "Proteomics"                     "ProteomicsWorkflow"            
-#&gt; [375] "Pseudomonas_aeruginosa"         "Pseudomonas_aeruginosa_Data"   
-#&gt; [377] "QiagenChip"                     "qPCR"                          
-#&gt; [379] "qPCRData"                       "QualityControl"                
-#&gt; [381] "QuantitativeTrailLocus"         "r10kcod"                       
-#&gt; [383] "rae230a"                        "rae230b"                       
-#&gt; [385] "rat2302"                        "Rattus_norvegicus"             
-#&gt; [387] "Rattus_norvegicus_Data"         "Reactome"                      
-#&gt; [389] "Regression"                     "ReportWriting"                 
-#&gt; [391] "RepositoryData"                 "ReproducibleResearch"          
-#&gt; [393] "ResearchField"                  "ResourceQueryingWorkflow"      
-#&gt; [395] "ReversePhaseProteinArray"       "ReversePhaseProteinArrayData"  
-#&gt; [397] "rgu34a"                         "rgu34b"                        
-#&gt; [399] "rgu34c"                         "rgug4130a"                     
-#&gt; [401] "ri16cod"                        "RiboSeq"                       
-#&gt; [403] "RIPSeq"                         "RIPSeqData"                    
-#&gt; [405] "RNASeq"                         "RNASeqData"                    
-#&gt; [407] "RNG_MRCChip"                    "rnu34"                         
-#&gt; [409] "Roberts2005Annotation"          "RocheChip"                     
-#&gt; [411] "rtu34"                          "rwgcod"                        
-#&gt; [413] "Saccharomyces_cerevisiae"       "Saccharomyces_cerevisiae_Data" 
-#&gt; [415] "Saccharum_officinarum"          "Saccharum_officinarum_Data"    
-#&gt; [417] "SAGE"                           "SAGEData"                      
-#&gt; [419] "SangerSeq"                      "SangerSeqData"                 
-#&gt; [421] "Scaffolding"                    "Schizosaccharomyces_pombe"     
-#&gt; [423] "Schizosaccharomyces_pombe_Data" "SequenceAnnotation"            
-#&gt; [425] "SequenceMatching"               "Sequencing"                    
-#&gt; [427] "SequencingData"                 "SHDZ"                          
-#&gt; [429] "SIFT"                           "SingleCell"                    
-#&gt; [431] "SingleCellData"                 "SingleCellWorkflow"            
-#&gt; [433] "SmallRNA"                       "SmallRNAData"                  
-#&gt; [435] "SNP"                            "SNPData"                       
-#&gt; [437] "SNPlocs"                        "Software"                      
-#&gt; [439] "Somatic"                        "SomaticMutation"               
-#&gt; [441] "Spatial"                        "SpatialData"                   
-#&gt; [443] "SpatialWorkflow"                "SpecimenSource"                
-#&gt; [445] "SplicedAlignment"               "Staphylococcus_aureus"         
-#&gt; [447] "Staphylococcus_aureus_Data"     "StatisticalMethod"             
-#&gt; [449] "StemCell"                       "StructuralEquationModels"      
-#&gt; [451] "StructuralGenomics"             "StructuralPrediction"          
-#&gt; [453] "StructuralVariation"            "SupportVectorMachine"          
-#&gt; [455] "Survival"                       "Sus_scrofa"                    
-#&gt; [457] "Sus_scrofa_Data"                "SystemsBiology"                
-#&gt; [459] "Taeniopygia_guttata"            "Taeniopygia_guttata_Data"      
-#&gt; [461] "TargetedResequencing"           "Technology"                    
-#&gt; [463] "TechnologyData"                 "ThirdPartyClient"              
-#&gt; [465] "TimeCourse"                     "Tissue"                        
-#&gt; [467] "TissueMicroarray"               "TissueMicroarrayData"          
-#&gt; [469] "Toxoplasma_gondii"              "Transcription"                 
-#&gt; [471] "TranscriptomeVariant"           "Transcriptomics"               
-#&gt; [473] "Triticum_aestivum"              "Triticum_aestivum_Data"        
-#&gt; [475] "TwoChannel"                     "TwoChannelData"                
-#&gt; [477] "TxDb"                           "u133x3p"                       
-#&gt; [479] "UniversityHealthNetwork"        "VariantAnnotation"             
-#&gt; [481] "VariantDetection"               "Visualization"                 
-#&gt; [483] "Vitis_vinifera"                 "Vitis_vinifera_Data"           
-#&gt; [485] "WholeGenome"                    "Workflow"                      
-#&gt; [487] "WorkflowStep"                   "Xenopus_laevis"                
-#&gt; [489] "Xenopus_laevis_Data"            "Xenopus_tropicalis"            
-#&gt; [491] "Xenopus_tropicalis_Data"        "xenopuslaevis"                 
-#&gt; [493] "XtraSNPlocs"                    "yeast2"                        
-#&gt; [495] "ygs98"                          "Zea_mays"                      
-#&gt; [497] "Zea_mays_Data"                  "zebrafish"                     </div><div class='input'>
-<span class='va'>params</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>topics <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Challenges"</span>, <span class='st'>"Community"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='fu'>format_topics</span><span class='op'>(</span><span class='va'>params</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; - `Challenges`
-#&gt; 
-#&gt; - `Community`</div></pre>
+    <pre class="examples"><span class='r-in'><span class='va'>topic_tags</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   [1] "aCGH"                           "adme16cod"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   [3] "AffymetrixChip"                 "ag"                            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   [5] "AgilentChip"                    "Agroinformatics"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   [7] "Alignment"                      "AlternativeSplicing"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   [9] "Annotation"                     "AnnotationData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [11] "AnnotationHub"                  "AnnotationHubSoftware"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [13] "AnnotationWorkflow"             "Anopheles_gambiae"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [15] "Anopheles_gambiae_Data"         "Apis_mellifera"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [17] "Apis_mellifera_Data"            "Arabidopsis_lyrata"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [19] "Arabidopsis_lyrata_Data"        "Arabidopsis_thaliana"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [21] "Arabidopsis_thaliana_Data"      "ArrayExpress"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [23] "Asparagus_officinalis"          "AssayDomain"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [25] "AssayDomainData"                "ATACSeq"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [27] "ath1121501"                     "Bacillus_subtilis"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [29] "Bacillus_subtilis_Data"         "BasicWorkflow"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [31] "BatchEffect"                    "Bayesian"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [33] "BioCarta"                       "BiocViews"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [35] "BiologicalQuestion"             "BiomedicalInformatics"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [37] "Biophysics"                     "BioPlex"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [39] "Bos_taurus"                     "Bos_taurus_Data"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [41] "BreastCancerData"               "BSgenome"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [43] "BugSigDB"                       "Caenorhabditis_elegans"        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [45] "Caenorhabditis_elegans_Data"    "Callithrix_jacchus"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [47] "Callithrix_jacchus_Data"        "CancerData"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [49] "Canis_familiaris"               "Canis_familiaris_Data"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [51] "cdf"                            "celegans"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [53] "CellBasedAssays"                "CellBiology"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [55] "CellCulture"                    "CGHData"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [57] "Challenges"                     "Cheminformatics"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [59] "ChIPchip"                       "ChipDb"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [61] "ChipManufacturer"               "ChipName"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [63] "ChipOnChip"                     "ChipOnChipData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [65] "ChIPSeq"                        "ChIPSeqData"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [67] "Chlamydomonas_reinhardtii"      "Cicer_arietinum"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [69] "Ciona_intestinalis"             "Ciona_intestinalis_Data"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [71] "Classification"                 "ClonetechChip"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [73] "Clustering"                     "CodelinkChip"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [75] "ColonCancerData"                "Community"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [77] "ComparativeGenomics"            "ComputationalChemistry"        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [79] "COPDData"                       "CopyNumberVariation"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [81] "CopyNumberVariationData"        "Coverage"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [83] "CpGIsland"                      "CpGIslandData"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [85] "CRISPR"                         "CustomArray"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [87] "CustomCDF"                      "CustomDBSchema"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [89] "Danio_rerio"                    "Danio_rerio_Data"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [91] "DataImport"                     "DataRepresentation"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [93] "db0"                            "ddPCR"                         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [95] "DecisionTree"                   "DemethylateRegionDetection"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [97] "DenovoAssembler"                "DenovoGenome"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [99] "DenovoTranscriptome"            "DifferentialDNA3DStructure"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [101] "DifferentialExpression"         "DifferentialMethylation"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [103] "DifferentialPeakCalling"        "DifferentialSplicing"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [105] "DifferentialSplicingWorkflow"   "DimensionReduction"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [107] "DiseaseModel"                   "DNA3DStructure"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [109] "DNAMethylation"                 "DNASeq"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [111] "DNASeqData"                     "DNaseSeq"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [113] "DriverMutation"                 "drosgenome1"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [115] "Drosophila_melanogaster"        "Drosophila_melanogaster_Data"  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [117] "Drosophila_virilis"             "Drosophila_virilis_Data"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [119] "drosophila2"                    "ENCODE"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [121] "Epigenetics"                    "EpigeneticsWorkflow"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [123] "Epitranscriptomics"             "Eremothecium_gossypii"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [125] "Eremothecium_gossypii_Data"     "Escherichia_coli"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [127] "Escherichia_coli_Data"          "EuPathDB"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [129] "ExomeSeq"                       "ExomeSeqData"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [131] "ExonArray"                      "ExperimentalDesign"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [133] "ExperimentData"                 "ExperimentHub"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [135] "ExperimentHubSoftware"          "ExpressionData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [137] "FeatureExtraction"              "FlowCytometry"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [139] "FlowCytometryData"              "FRMA"                          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [141] "FunctionalAnnotation"           "FunctionalGenomics"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [143] "FunctionalPrediction"           "GACustomCDF"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [145] "Gallus_gallus"                  "Gallus_gallus_Data"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [147] "Gasterosteus_aculeatus"         "Gasterosteus_aculeatus_Data"   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [149] "GEChip"                         "GeneCardsCustomSchema"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [151] "GeneExpression"                 "GeneExpressionWorkflow"        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [153] "GeneFusionDetection"            "GenePrediction"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [155] "GeneRegulation"                 "GeneSetEnrichment"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [157] "GeneSignaling"                  "GeneTarget"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [159] "Genetics"                       "GeneticVariability"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [161] "Genome"                         "GenomeAnnotation"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [163] "GenomeAssembly"                 "GenomeBrowsers"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [165] "GenomeWideAssociation"          "GenomicSequence"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [167] "GenomicVariantsWorkflow"        "GenomicVariation"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [169] "GenotypingArray"                "GenotypingArrayData"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [171] "GEO"                            "Germline"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [173] "GermlineMutation"               "Glycine_max"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [175] "Glycine_max_Data"               "GO"                            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [177] "GraphAndNetwork"                "GUI"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [179] "h10kcod"                        "h20kcod"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [181] "HapMap"                         "hcg110"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [183] "hcgi12k"                        "hcgi8k"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [185] "hgfocus"                        "hgu133a"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [187] "hgu133a2"                       "hgu133b"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [189] "hgu133plus2"                    "hgu95a"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [191] "hgu95av2"                       "hgu95b"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [193] "hgu95c"                         "hgu95d"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [195] "hgu95e"                         "hguatlas13k"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [197] "hgug4100a"                      "hgug4101a"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [199] "hgug4110b"                      "hgug4111a"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [201] "hgug4112a"                      "hguqiagenv3"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [203] "hi16cod"                        "HiC"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [205] "HiddenMarkovModel"              "HighThroughputImagingData"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [207] "HistoneModification"            "HIVData"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [209] "Homo_sapiens"                   "Homo_sapiens_Data"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [211] "Hordeum_vulgare"                "Hordeum_vulgare_Data"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [213] "hs25kresogen"                   "hu35ksuba"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [215] "hu35ksubb"                      "hu35ksubc"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [217] "hu35ksubd"                      "hu6800"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [219] "HuO22"                          "hwgcod"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [221] "IlluminaChip"                   "illuminaHumanv1"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [223] "illuminaHumanv2"                "illuminaMousev1"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [225] "illuminaMousev1p1"              "illuminaRatv1"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [227] "ImagingMassSpectrometry"        "ImagingMassSpectrometryData"   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [229] "ImmunoOncology"                 "ImmunoOncologyData"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [231] "ImmunoOncologyWorkflow"         "indac"                         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [233] "INDACChip"                      "IndelDetection"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [235] "Infrastructure"                 "InparanoidDb"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [237] "Instrumentation"                "JazaerimetaData"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [239] "KEGG"                           "KidneyCancerData"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [241] "Kluyveromyces_lactis"           "Kluyveromyces_lactis_Data"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [243] "LeukemiaCancerData"             "LinkageDisequilibrium"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [245] "Lipidomics"                     "lumiHumanV1"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [247] "lumiHumanV2"                    "lumiMouseV1"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [249] "lumiRatV1"                      "LungCancerData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [251] "m10kcod"                        "m20kcod"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [253] "Macaca_fascicularis"            "Macaca_mulatta"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [255] "Macaca_mulatta_Data"            "Magnaporthe_grisea"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [257] "Magnaporthe_grisea_Data"        "MassSpectrometry"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [259] "MassSpectrometryData"           "MathematicalBiology"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [261] "MBNICustomCDF"                  "Medicago_truncatul_Data"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [263] "Medicago_truncatula"            "MeSHDb"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [265] "Metabolomics"                   "MetagenomeAssembly"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [267] "Metagenomics"                   "MethylationArray"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [269] "MethylationArrayData"           "MethylSeq"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [271] "MethylSeqData"                  "mgu74a"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [273] "mgu74av2"                       "mgu74b"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [275] "mgu74bv2"                       "mgu74c"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [277] "mgu74cv2"                       "mguatlas5k"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [279] "mgug4121a"                      "mgug4122a"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [281] "mi16cod"                        "Microarray"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [283] "MicroarrayData"                 "MicrobialStrain"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [285] "Microbiome"                     "MicrobiomeData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [287] "MicroRNAArray"                  "MicroRNAArrayData"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [289] "MicrosatelliteDetection"        "MicrotitrePlateAssay"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [291] "MicrotitrePlateAssayData"       "miRNA"                         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [293] "miRNAData"                      "mm24kresogen"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [295] "MNaseSeq"                       "moe430a"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [297] "moe430b"                        "Monodelphis_domestica"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [299] "Monodelphis_domestica_Data"     "MotifAnnotation"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [301] "MotifDiscovery"                 "mouse4302"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [303] "mouse430a2"                     "mpedbarray"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [305] "mRNAArrayData"                  "mRNAMicroarray"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [307] "mu11ksuba"                      "mu11ksubb"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [309] "Mu15v1"                         "mu19ksuba"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [311] "mu19ksubb"                      "mu19ksubc"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [313] "Mu22v3"                         "MultiChannel"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [315] "MultiChannelData"               "MultidimensionalScaling"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [317] "MultipleComparison"             "MultipleSequenceAlignment"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [319] "Mus_musculus"                   "Mus_musculus_Data"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [321] "mwgcod"                         "NCI"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [323] "NCINatureCurated"               "Network"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [325] "NetworkEnrichment"              "NetworkInference"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [327] "NeuralNetwork"                  "Neurospora_crassa"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [329] "Neurospora_crassa_Data"         "Normalization"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [331] "Norway981"                      "NucleosomePositioning"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [333] "Oncorhynchus_mykiss"            "Oncorhynchus_mykiss_Data"      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [335] "OneChannel"                     "OneChannelData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [337] "OperonHumanV3"                  "Organism"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [339] "OrganismData"                   "OrganismDb"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [341] "OrgDb"                          "Oryza_sativa"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [343] "Oryza_sativa_Data"              "OvarianCancerData"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [345] "PackageType"                    "PackageTypeData"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [347] "Pan_paniscus"                   "Pan_paniscus_Data"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [349] "Pan_troglodytes"                "Pan_troglodytes_Data"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [351] "PartheenMetaData"               "PathwayInteractionDatabase"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [353] "Pathways"                       "PatternLogic"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [355] "PeakDetection"                  "pedbarrayv10"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [357] "pedbarrayv9"                    "Pharmacogenetics"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [359] "Pharmacogenomics"               "Phylogenetics"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [361] "Plasmodium_falciparum"          "Plasmodium_falciparum_Data"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [363] "PolyPhen"                       "PooledScreens"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [365] "Preprocessing"                  "PrincipalComponent"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [367] "probe"                          "Project1000genomes"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [369] "ProprietaryPlatforms"           "ProprietaryPlatformsData"      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [371] "ProstateCancerData"             "Proteome"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [373] "Proteomics"                     "ProteomicsWorkflow"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [375] "Pseudomonas_aeruginosa"         "Pseudomonas_aeruginosa_Data"   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [377] "QiagenChip"                     "qPCR"                          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [379] "qPCRData"                       "QualityControl"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [381] "QuantitativeTrailLocus"         "r10kcod"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [383] "rae230a"                        "rae230b"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [385] "rat2302"                        "Rattus_norvegicus"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [387] "Rattus_norvegicus_Data"         "Reactome"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [389] "Regression"                     "ReportWriting"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [391] "RepositoryData"                 "ReproducibleResearch"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [393] "ResearchField"                  "ResourceQueryingWorkflow"      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [395] "ReversePhaseProteinArray"       "ReversePhaseProteinArrayData"  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [397] "rgu34a"                         "rgu34b"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [399] "rgu34c"                         "rgug4130a"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [401] "ri16cod"                        "RiboSeq"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [403] "RIPSeq"                         "RIPSeqData"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [405] "RNASeq"                         "RNASeqData"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [407] "RNG_MRCChip"                    "rnu34"                         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [409] "Roberts2005Annotation"          "RocheChip"                     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [411] "rtu34"                          "rwgcod"                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [413] "Saccharomyces_cerevisiae"       "Saccharomyces_cerevisiae_Data" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [415] "Saccharum_officinarum"          "Saccharum_officinarum_Data"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [417] "SAGE"                           "SAGEData"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [419] "SangerSeq"                      "SangerSeqData"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [421] "Scaffolding"                    "Schizosaccharomyces_pombe"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [423] "Schizosaccharomyces_pombe_Data" "SequenceAnnotation"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [425] "SequenceMatching"               "Sequencing"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [427] "SequencingData"                 "SHDZ"                          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [429] "ShinyApps"                      "SIFT"                          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [431] "SingleCell"                     "SingleCellData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [433] "SingleCellWorkflow"             "SmallRNA"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [435] "SmallRNAData"                   "SNP"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [437] "SNPData"                        "SNPlocs"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [439] "Software"                       "Somatic"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [441] "SomaticMutation"                "Spatial"                       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [443] "SpatialData"                    "SpatialWorkflow"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [445] "SpecimenSource"                 "SplicedAlignment"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [447] "Staphylococcus_aureus"          "Staphylococcus_aureus_Data"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [449] "StatisticalMethod"              "StemCell"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [451] "StructuralEquationModels"       "StructuralGenomics"            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [453] "StructuralPrediction"           "StructuralVariation"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [455] "SupportVectorMachine"           "Survival"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [457] "Sus_scrofa"                     "Sus_scrofa_Data"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [459] "SystemsBiology"                 "Taeniopygia_guttata"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [461] "Taeniopygia_guttata_Data"       "TargetedResequencing"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [463] "Technology"                     "TechnologyData"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [465] "ThirdPartyClient"               "TimeCourse"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [467] "Tissue"                         "TissueMicroarray"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [469] "TissueMicroarrayData"           "Toxoplasma_gondii"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [471] "Transcription"                  "TranscriptomeVariant"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [473] "Transcriptomics"                "Triticum_aestivum"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [475] "Triticum_aestivum_Data"         "TwoChannel"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [477] "TwoChannelData"                 "TxDb"                          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [479] "u133x3p"                        "UniversityHealthNetwork"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [481] "VariantAnnotation"              "VariantDetection"              </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [483] "Visualization"                  "Vitis_vinifera"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [485] "Vitis_vinifera_Data"            "WholeGenome"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [487] "Workflow"                       "WorkflowStep"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [489] "Xenopus_laevis"                 "Xenopus_laevis_Data"           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [491] "Xenopus_tropicalis"             "Xenopus_tropicalis_Data"       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [493] "xenopuslaevis"                  "XtraSNPlocs"                   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [495] "yeast2"                         "ygs98"                         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [497] "Zea_mays"                       "Zea_mays_Data"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [499] "zebrafish"                     </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='va'>params</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>topics <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Challenges"</span>, <span class='st'>"Community"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='fu'>format_topics</span><span class='op'>(</span><span class='va'>params</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> - `Challenges`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> - `Community`</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -454,7 +460,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Kevin Rue-Albrecht.</p>
+  <p>Developed by Kevin Rue-Albrecht, Vince Carey, Johannes Rainer.</p>
 </div>
 
 <div class="pkgdown">

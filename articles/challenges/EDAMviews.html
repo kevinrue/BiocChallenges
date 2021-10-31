@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contribute new functionality to BiocChallenges • BiocChallenges</title>
+<title>Upgrading biocViews with EDAM • BiocChallenges</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../apple-touch-icon.png">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../../pkgdown.css" rel="stylesheet">
 <script src="../../pkgdown.js"></script><link href="../../extra.css" rel="stylesheet">
-<meta property="og:title" content="Contribute new functionality to BiocChallenges">
+<meta property="og:title" content="Upgrading biocViews with EDAM">
 <meta property="og:description" content="BiocChallenges">
 <meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -115,87 +115,92 @@
 
       
 
-      </header><script src="biocchallenges_functionality_files/header-attrs-2.11/header-attrs.js"></script><link href="biocchallenges_functionality_files/font-awesome-5.1.0/css/all.css" rel="stylesheet">
-<link href="biocchallenges_functionality_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet">
+      </header><script src="EDAMviews_files/header-attrs-2.11/header-attrs.js"></script><link href="EDAMviews_files/font-awesome-5.1.0/css/all.css" rel="stylesheet">
+<link href="EDAMviews_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Contribute new functionality to BiocChallenges</h1>
-                        <h4 class="author">Kevin Rue-Albrecht</h4>
+      <h1 data-toc-skip>Upgrading biocViews with EDAM</h1>
+                        <h4 class="author">Vince Carey</h4>
             <address class="author_afil">
-      University of Oxford<br><a class="author_email" href="mailto:#"></a><a href="mailto:kevinrue67@gmail.com" class="email">kevinrue67@gmail.com</a>
+      Harvard Medical School<br><a class="author_email" href="mailto:#"></a><a href="mailto:stvjc@channing.harvard.edu" class="email">stvjc@channing.harvard.edu</a>
       </address>
                   
       
-      <small class="dont-index">Source: <a href="https://github.com/kevinrue/BiocChallenges/blob/master/vignettes/challenges/biocchallenges_functionality.Rmd"><code>vignettes/challenges/biocchallenges_functionality.Rmd</code></a></small>
-      <div class="hidden name"><code>biocchallenges_functionality.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/kevinrue/BiocChallenges/blob/master/vignettes/challenges/EDAMviews.Rmd"><code>vignettes/challenges/EDAMviews.Rmd</code></a></small>
+      <div class="hidden name"><code>EDAMviews.Rmd</code></div>
 
     </div>
 
     
         <div class="abstract">
       <p class="abstract">Abstract</p>
-      <p>Contribute new functionality to <em><a href="https://github.com/kevinrue/BiocChallenges">BiocChallenges</a></em></p>
+      <p>The <a href="https://github.com/edamontology/edamontology">EDAM ontology</a> should be useful for improving the organization of Bioconductor resources. This challenge considers how to integrate information in the ontology with biocViews terms. It may be possible to reconceptualize the role of biocViews in project infrastructure in the context of this challenge.</p>
     </div>
     
 <div id="difficulty" class="section level2">
 <h2 class="hasAnchor">
 <a href="#difficulty" class="anchor"></a>Difficulty</h2>
-<p>Novice.</p>
+<p>Advanced.</p>
 </div>
 <div id="challenge-leaders" class="section level2">
 <h2 class="hasAnchor">
 <a href="#challenge-leaders" class="anchor"></a>Challenge leader(s)</h2>
 <ul>
-<li>Kevin Rue - <i class="fab fa-github"></i> <a href="https://github.com/kevinrue">kevinrue</a>
+<li>Vince Carey - <i class="fab fa-github"></i> <a href="https://github.com/vjcitn">vjcitn</a>
 </li>
 </ul>
 </div>
 <div id="date-added" class="section level2">
 <h2 class="hasAnchor">
 <a href="#date-added" class="anchor"></a>Date added</h2>
-<p>This challenge was created on November 08, 2020</p>
+<p>This challenge was created on October 30, 2021</p>
 </div>
 <div id="topics" class="section level2">
 <h2 class="hasAnchor">
 <a href="#topics" class="anchor"></a>Topics</h2>
 <ul>
-<li><p><code>Community</code></p></li>
-<li><p><code>Challenges</code></p></li>
+<li><code>Challenges</code></li>
 </ul>
 </div>
 <div id="duration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#duration" class="anchor"></a>Duration</h2>
-<p>A minimum of 1 hour(s) is recommended for this challenge.</p>
+<p>A minimum of 2 month(s) is recommended for this challenge.</p>
 </div>
 <div id="repositories" class="section level2">
 <h2 class="hasAnchor">
 <a href="#repositories" class="anchor"></a>Repositories</h2>
 <p>A list of GitHub repositories that participate in this challenge.</p>
-<pre><code>## Warning in .cache_github_repo(repo): Querying github</code></pre>
-<table class="table">
-<thead><tr class="header">
-<th align="left">repository</th>
-<th align="right">stargazers</th>
-<th align="left">latest.push</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="left">
-<i class="fab fa-github"></i> <a href="https://github.com/kevinrue/BiocChallenges">kevinrue/BiocChallenges</a>
-</td>
-<td align="right">9</td>
-<td align="left">2021-10-31 20:51:26</td>
-</tr></tbody>
-</table>
+<p><em>No repository currently addresses this challenge.</em></p>
 </div>
 <div id="guidelines" class="section level2">
 <h2 class="hasAnchor">
 <a href="#guidelines" class="anchor"></a>Guidelines</h2>
-<p>Fork the original repository <i class="fab fa-github"></i> <em><a href="https://github.com/kevinrue/BiocChallenges">BiocChallenges</a></em>, working on a branch of your fork, and submitting a pull request when your contribution is ready for review.</p>
-<p>New functionality should contribute to the experience of both challenge leaders and contributors.</p>
-<p>Unit tests should be provided, where possible.</p>
-<p>Contributions written in a style that matches current contents are more likely to be accepted, and more rapidly.</p>
+<div id="note" class="section level3">
+<h3 class="hasAnchor">
+<a href="#note" class="anchor"></a>Note</h3>
+<p>This task can impact several aspects of Bioconductor and R packages for genomics.</p>
+<ul>
+<li>First, use of <a href="https://github.com/edamontology/edamontology">EDAM</a> to tag Bioconductor packages and resources may aid in the processes of publicizing and discovering software and data</li>
+<li>Second, an EDAMviews tag may be added as an endorsed field for package DESCRIPTION</li>
+<li>Third, EDAM may integrate into the presentation of Bioconductor resources in the same manner as biocViews does presently; see the <a href="https://bioconductor.org/packages/release/BiocViews.html#___Software">search box for software</a>.</li>
+</ul>
+</div>
+<div id="evaluate-edam-and-compare-to-biocviews" class="section level3">
+<h3 class="hasAnchor">
+<a href="#evaluate-edam-and-compare-to-biocviews" class="anchor"></a>Evaluate EDAM and compare to biocViews</h3>
+<p>Investigate the biocViews vocabulary, and the EDAM ontology. For motivation, consider the display derived from <a href="https://edamontology.github.io/edam-browser/#operation_0533">the EDAM browser</a>:</p>
+<p>
+<img src="https://storage.googleapis.com/bioc-anvil-images/EDAM.png" alt="" width="800"></p>
+<p>
+</p>
+<p>How can we take advantage of this terminology and concept structure?</p>
+<ul>
+<li>Are there terms in biocViews for which EDAM terms are ready-to-use substitutes?</li>
+<li>Are there concepts in biocViews that are lacking in EDAM that should be proposed for additions?</li>
+</ul>
+</div>
 </div>
   </div>
 
