@@ -8,3 +8,5 @@
 
 The goal of BiocChallenges is to host challenges contributed by and for the Bioconductor community.
 
+The [Articles](https://kevinrue.github.io/BiocChallenges/articles/index.html) section of the website produces a list of challenges to consider.
+Visit the challenges, tackle them, and contribute your own challenges!
