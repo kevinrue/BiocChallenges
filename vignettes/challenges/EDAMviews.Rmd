@@ -32,7 +32,7 @@ params:
 
 Investigate the biocViews vocabulary, and the EDAM ontology.  For motivation, consider the display:
 
-<img src="man/figures/EDAM.jpg" align="right" alt="" width="180" />
+<img src="man/figures/EDAM.png" align="right" alt="" width="180" />
 
 How can we take advantage of this terminology and concept structure?
 
