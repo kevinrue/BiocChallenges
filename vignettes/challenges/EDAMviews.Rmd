@@ -1,0 +1,59 @@
+---
+title: "Upgrading biocViews with EDAM"
+author:
+- name: Vince Carey
+  affiliation: Harvard Medical School
+  email: stvjc@channing.harvard.edu
+abstract: |
+  The [EDAM ontology](https://github.com/edamontology/edamontology) should be useful
+  for improving the organization of Bioconductor resources.  This challenge considers how
+  to integrate information in the ontology with biocViews terms.  It may be possible to
+  reconceptualize the role of biocViews in project infrastructure in the context of this
+  challenge.
+vignette: |
+  %\VignetteIndexEntry{Upgrading biocViews with EDAM}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+params:
+  date: "2021-10-30"
+  difficulty: "advanced"
+  leaders:
+    value:
+      vjcitn: "Vince Carey"
+  topics:
+    - "Challenges"
+  duration: "2 month(s)"
+---
+
+```{r, child=system.file(package="BiocChallenges", "rmd", "_challenge_base.Rmd")}
+```
+
+## Guidelines
+
+### Note
+
+This task can impact several aspects of Bioconductor and R packages for
+genomics.  
+
+- First, use of [EDAM](https://github.com/edamontology/edamontology)
+to tag Bioconductor packages and resources may aid in the processes of publicizing and discovering
+software and data
+- Second, an EDAMviews tag may be added as an endorsed field for package DESCRIPTION
+- Third, EDAM may integrate into the presentation of Bioconductor resources in the same
+manner as biocViews does presently; see the [search box for software](https://bioconductor.org/packages/release/BiocViews.html#___Software).
+
+
+### Evaluate EDAM and compare to biocViews
+
+Investigate the biocViews vocabulary, and the EDAM ontology.  For motivation, consider the display
+derived from [the EDAM browser](https://edamontology.github.io/edam-browser/#operation_0533):
+
+<p>
+<img src="https://storage.googleapis.com/bioc-anvil-images/EDAM.png" alt="" width="800" />
+<p>
+
+How can we take advantage of this terminology and concept structure?
+
+- Are there terms in biocViews for which EDAM terms are ready-to-use substitutes?
+- Are there concepts in biocViews that are lacking in EDAM that should be proposed for additions?
+
